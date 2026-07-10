@@ -405,7 +405,7 @@ export const pages = {
       'Incentives & KOSGEB',
       'Accounting & payroll',
       'Tax returns & planning',
-      'Foreign investor advisory',
+      'E-commerce & digital businesses',
     ],
     ctaHeading: 'How about we meet?',
     personDesc:
