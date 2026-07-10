@@ -1,0 +1,129 @@
+---
+import '@fontsource-variable/sora';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsappFab from '../components/WhatsappFab.astro';
+import { site } from '../data/site';
+import { ui, type Lang } from '../i18n/ui';
+
+interface Props {
+  title: string;
+  description: string;
+  /** kanonik yol, örn "/hizmetler/" — verilmezse mevcut path kullanılır */
+  path?: string;
+  /** sayfaya özel ekstra JSON-LD (breadcrumb, service vb.) */
+  jsonLd?: object[];
+  ogType?: string;
+  /** sayfaya özel OG görseli (örn rehber kapağı) — verilmezse marka amblemi */
+  ogImage?: string;
+  /** sayfa dili — kök TR, /en/ altı EN */
+  lang?: Lang;
+  /** karşı dildeki aynı sayfanın yolu (hreflang + dil değiştirici için) */
+  altPath?: string;
+}
+const {
+  title,
+  description,
+  path,
+  jsonLd = [],
+  ogType = 'website',
+  ogImage: ogImageProp,
+  lang = 'tr',
+  altPath,
+} = Astro.props;
+const L = ui[lang];
+const otherLang: Lang = lang === 'tr' ? 'en' : 'tr';
+
+const canonical = new URL(path ?? Astro.url.pathname, site.url).href;
+const altUrl = altPath ? new URL(altPath, site.url).href : undefined;
+// x-default → Türkçe sürüm (varsayılan dil)
+const xDefault = lang === 'tr' ? canonical : altUrl;
+const fullTitle =
+  title === site.name ? `${site.name} — ${L.brandSuffix}` : `${title} | ${site.name}`;
+const hasCustomOg = Boolean(ogImageProp);
+const ogImage = new URL(ogImageProp ?? '/marka/tgf-emblem.svg', site.url).href;
+
+// Kalıcı LocalBusiness/AccountingService şeması — her sayfada.
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AccountingService',
+  '@id': site.url + '/#business',
+  name: site.name,
+  legalName: site.legalName,
+  description: L.businessDesc,
+  url: site.url,
+  telephone: site.phone,
+  faxNumber: site.fax,
+  email: site.email,
+  image: ogImage,
+  priceRange: '₺₺',
+  founder: { '@id': site.url + '/#gokay', '@type': 'Person', name: site.personName, jobTitle: site.title },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.line,
+    addressLocality: 'Şişli',
+    addressRegion: 'İstanbul',
+    postalCode: site.address.postalCode,
+    addressCountry: site.address.country,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: site.address.lat,
+    longitude: site.address.lng,
+  },
+  areaServed: { '@type': 'City', name: 'İstanbul' },
+  openingHours: site.hoursSchema,
+  sameAs: [site.linkedin, site.gokaygul],
+};
+
+const schemas = [businessSchema, ...jsonLd];
+---
+
+<!doctype html>
+<html lang={L.htmlLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Dil alternatifleri (hreflang) -->
+    <link rel="alternate" hreflang={L.htmlLang} href={canonical} />
+    {altUrl && <link rel="alternate" hreflang={ui[otherLang].htmlLang} href={altUrl} />}
+    {xDefault && <link rel="alternate" hreflang="x-default" href={xDefault} />}
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#635BFF" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={L.ogLocale} />
+    {altUrl && <meta property="og:locale:alternate" content={ui[otherLang].ogLocale} />}
+    <meta name="twitter:card" content={hasCustomOg ? 'summary_large_image' : 'summary'} />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content={site.personName} />
+    <meta name="geo.region" content="TR-34" />
+    <meta name="geo.placename" content="Şişli, İstanbul" />
+
+    {schemas.map((s) => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
+  </head>
+  <body>
+    <a href="#main" class="sr-only">{lang === 'tr' ? 'İçeriğe geç' : 'Skip to content'}</a>
+    <Header lang={lang} altPath={altPath} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+    <WhatsappFab lang={lang} />
+  </body>
+</html>

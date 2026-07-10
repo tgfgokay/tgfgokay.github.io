@@ -1,0 +1,15 @@
+<svg width="256" height="256" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TGF amblem">
+  <defs>
+    <linearGradient id="tgfGrad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8A7BFF"></stop>
+      <stop offset="0.5" stop-color="#635BFF"></stop>
+      <stop offset="1" stop-color="#4B45C6"></stop>
+    </linearGradient>
+  </defs>
+  <path d="M29 3 L71 3 Q97 3 97 29 L97 71 Q97 97 71 97 L29 97 Q3 97 3 71 L3 29 Q3 3 29 3 Z" fill="url(#tgfGrad)"></path>
+  <g transform="translate(24.9870,59.5160) scale(0.026000,-0.026000)" fill="#FFFFFF">
+    <path transform="translate(0.00,0)" d="M220 0V588H406V0ZM20 568V730H606V568Z"/>
+    <path transform="translate(587.54,0)" d="M427 -20Q324 -20 250.0 14.5Q176 49 129.0 105.0Q82 161 60.0 227.0Q38 293 38 356V378Q38 446 61.0 512.5Q84 579 130.5 633.0Q177 687 247.0 719.5Q317 752 411 752Q512 752 589.5 715.0Q667 678 714.0 612.5Q761 547 769 461H583Q577 494 554.0 520.5Q531 547 494.5 562.5Q458 578 411 578Q366 578 331.5 562.5Q297 547 273.5 518.5Q250 490 238.0 451.0Q226 412 226 366Q226 320 239.0 280.5Q252 241 277.0 211.5Q302 182 340.0 166.0Q378 150 427 150Q489 150 534.0 176.0Q579 202 597 245L583 135V294H753V144Q707 65 622.5 22.5Q538 -20 427 -20ZM407 258V388H813V258Z"/>
+    <path transform="translate(1382.08,0)" d="M74 0V730H260V0ZM240 283V435H511V283ZM240 578V730H522V578Z"/>
+  </g>
+</svg>

@@ -1,0 +1,168 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import CtaStrip from '../../components/CtaStrip.astro';
+import { site, services } from '../../data/site';
+import { rehberToGuideSlug } from '../../i18n/en';
+import avatar from '../../assets/images/gokay-avatar.jpg';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('rehber', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+interface Props { post: CollectionEntry<'rehber'> }
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const related = post.data.relatedService
+  ? services.find((s) => s.slug === post.data.relatedService)
+  : undefined;
+
+const url = `${site.url}/rehber/${post.slug}/`;
+const cover = `/rehber-covers/${post.slug}.png`;
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Ana Sayfa', item: site.url + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Rehber', item: site.url + '/rehber/' },
+    { '@type': 'ListItem', position: 3, name: post.data.title, item: url },
+  ],
+};
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toISOString(),
+  dateModified: (post.data.updated ?? post.data.date).toISOString(),
+  image: site.url + cover,
+  author: {
+    '@id': site.url + '/#gokay',
+    '@type': 'Person',
+    name: site.personName,
+    jobTitle: site.title,
+    url: site.url + '/hakkimizda/',
+  },
+  publisher: { '@id': site.url + '/#business' },
+  mainEntityOfPage: url,
+  inLanguage: 'tr-TR',
+};
+---
+<Base
+  title={post.data.title}
+  description={post.data.description}
+  path={`/rehber/${post.slug}/`}
+  altPath={rehberToGuideSlug[post.slug] ? `/en/guide/${rehberToGuideSlug[post.slug]}/` : undefined}
+  jsonLd={[breadcrumb, article]}
+  ogType="article"
+  ogImage={cover}
+>
+  <article class="section">
+    <div class="container narrow">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="/">Ana Sayfa</a> <span>/</span>
+        <a href="/rehber/">Rehber</a> <span>/</span> {post.data.title}
+      </nav>
+
+      <img src={cover} alt={post.data.title} class="cover" width="1200" height="630" loading="eager" />
+
+      <h1>{post.data.title}</h1>
+      <div class="byline">
+        <Image src={avatar} alt="Gökay Gül" width={44} height={44} class="ava" loading="lazy" />
+        <div>
+          <strong>{site.personName}</strong> · {site.title}<br />
+          <span class="meta">{fmt(post.data.date)}{post.data.updated ? ` · güncellendi ${fmt(post.data.updated)}` : ''}</span>
+        </div>
+      </div>
+
+      <div class="prose">
+        <Content />
+      </div>
+
+      {related && (
+        <aside class="related">
+          <div>
+            <span class="eyebrow">İlgili hizmet</span>
+            <h2>{related.title}</h2>
+            <p>{related.short}</p>
+          </div>
+          <a href={`/hizmetler/${related.slug}/`} class="btn btn-primary">
+            Detaya bak <Icon name="arrow" />
+          </a>
+        </aside>
+      )}
+
+      <a href="/rehber/" class="back"><Icon name="arrow" /> Tüm rehber yazıları</a>
+    </div>
+  </article>
+
+  <CtaStrip />
+</Base>
+
+<style>
+  .narrow { max-width: 720px; }
+  .crumb { font-size: 0.85rem; color: var(--slate); margin-bottom: 1.25rem; }
+  .crumb a { color: var(--slate); }
+  .crumb span { margin: 0 0.4rem; }
+
+  .cover {
+    width: 100%; height: auto; display: block;
+    border-radius: var(--radius); margin-bottom: 2rem;
+    border: 1px solid var(--line);
+  }
+
+  .byline {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding-bottom: 1.5rem; margin-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.92rem;
+  }
+  .ava {
+    width: 44px; height: 44px; border-radius: 50%;
+    object-fit: cover; flex: none; display: block;
+  }
+  .byline strong { color: var(--ink); }
+  .byline .meta { color: var(--slate); }
+
+  /* PROSE tipografisi */
+  .prose { font-size: 1.06rem; line-height: 1.75; color: #2a3050; }
+  .prose :global(h2) { font-size: 1.5rem; margin: 2.25rem 0 0.75rem; }
+  .prose :global(h3) { font-size: 1.2rem; margin: 1.75rem 0 0.5rem; }
+  .prose :global(p) { margin: 0 0 1.15rem; }
+  .prose :global(ul), .prose :global(ol) { margin: 0 0 1.25rem; padding-left: 1.35rem; }
+  .prose :global(li) { margin-bottom: 0.5rem; }
+  .prose :global(a) { color: var(--blurple); font-weight: 500; text-decoration: underline; text-underline-offset: 2px; }
+  .prose :global(strong) { color: var(--ink); }
+  .prose :global(hr) { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
+  .prose :global(blockquote) {
+    margin: 1.5rem 0; padding: 0.85rem 1.25rem;
+    background: var(--wash); border-left: 3px solid var(--violet);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    color: var(--slate); font-size: 0.96rem;
+  }
+  .prose :global(blockquote p) { margin: 0; }
+
+  .related {
+    display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem; padding: 1.75rem;
+    background: var(--wash); border: 1px solid var(--line); border-radius: var(--radius);
+  }
+  .related h2 { font-size: 1.25rem; margin: 0.25rem 0 0.35rem; }
+  .related p { margin: 0; color: var(--slate); font-size: 0.95rem; max-width: 46ch; }
+  .related .btn { white-space: nowrap; }
+
+  .back {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    margin-top: 2.5rem; color: var(--slate); font-weight: 500; font-size: 0.92rem;
+  }
+  .back :global(svg) { width: 16px; height: 16px; transform: rotate(180deg); }
+</style>

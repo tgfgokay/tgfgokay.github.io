@@ -1,0 +1,109 @@
+---
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import { site, services } from '../data/site';
+import { servicesEn } from '../i18n/en';
+import { ui, routes, type Lang } from '../i18n/ui';
+interface Props { lang?: Lang }
+const { lang = 'tr' } = Astro.props;
+const L = ui[lang];
+const r = routes[lang];
+const svcList = lang === 'en' ? servicesEn : services;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div class="col about">
+      <Logo size={40} class="footer-logo" />
+      <p class="desc">
+        {site.legalName}. {L.footerDesc}
+      </p>
+      <div class="social">
+        <a href={r.guide}>{L.nav.guide}</a>
+        <a href={site.linkedin} rel="noopener" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+        <a href={site.gokaygul} rel="noopener" target="_blank">gokaygul.com</a>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>{L.footerServices}</h3>
+      <ul>
+        {svcList.map((s) => (
+          <li><a href={`${r.services}${s.slug}/`}>{s.title}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="col">
+      <h3>{L.footerContact}</h3>
+      <ul class="contact">
+        <li><Icon name="pin" /> <span>{site.address.full}</span></li>
+        <li><Icon name="phone" /> <a href={`tel:${site.phone}`}>{site.phoneDisplay}</a></li>
+        <li><Icon name="mail" /> <a href={`mailto:${site.email}`}>{site.email}</a></li>
+        <li><Icon name="clock" /> <span>{L.hours}</span></li>
+      </ul>
+      <a href={site.portalUrl} class="btn btn-ghost sm" rel="noopener" target="_blank">{L.portalArrow}</a>
+    </div>
+  </div>
+
+  <div class="container legal">
+    <p>
+      {L.legalLine({ taxOffice: site.taxOffice, vkn: site.vkn, chamber: site.chamber })}
+    </p>
+    <p>© {year} {site.name}. {L.rights}</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--ink);
+    color: #c7ccdb;
+    padding-top: clamp(3rem, 6vw, 4.5rem);
+    margin-top: 2rem;
+  }
+  .cols {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1.4fr;
+    gap: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .col h3 {
+    color: var(--white);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .desc { font-size: 0.92rem; line-height: 1.65; max-width: 42ch; margin-top: 1rem; }
+  .footer-logo :global(.logo-word strong) { color: var(--white); }
+  .footer-logo :global(.logo-word small) { color: var(--violet); }
+  .social { display: flex; gap: 1rem; margin-top: 0.5rem; }
+  .social a { color: var(--violet); font-weight: 500; font-size: 0.92rem; }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+  .col a { color: #c7ccdb; font-size: 0.94rem; }
+  .col a:hover { color: var(--white); }
+  .contact li {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .contact :global(svg) { width: 18px; height: 18px; color: var(--violet); flex: none; margin-top: 2px; }
+  .btn.sm { margin-top: 1.25rem; padding: 0.55rem 1rem; font-size: 0.88rem; }
+  .legal {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-block: 1.5rem;
+    font-size: 0.82rem;
+    color: #8b91a7;
+  }
+  .legal p { margin: 0; }
+  @media (max-width: 800px) {
+    .cols { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>

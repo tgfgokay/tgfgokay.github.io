@@ -1,0 +1,42 @@
+# TGF Mali Müşavirlik
+
+> İstanbul genelinde KOBİ’lere hizmet veren mali müşavirlik ofisi. Serbest Muhasebeci Mali Müşavir (SMMM) Gökay Gül tarafından yürütülür. Şirket kuruluşu, muhasebe & bordro, beyanname & vergi, teşvik & KOSGEB, teknopark & Ar-Ge ve danışmanlık hizmetleri. Ofis Şişli / İstanbul’dadır; İstanbul’un her ilçesine hizmet verilir.
+
+## Hizmetler
+- [Şirket Kuruluşu](https://tgfmalimusavirlik.com/hizmetler/sirket-kurulusu/): Limited, anonim ve şahıs işletmesi kuruluşu; doğru şirket türü seçimi ve süreç yönetimi.
+- [Muhasebe & Bordro](https://tgfmalimusavirlik.com/hizmetler/muhasebe-bordro/): Defter kaydı, bordro, SGK bildirimleri, e-belgeler; düzenli aylık takip.
+- [Beyanname & Vergi](https://tgfmalimusavirlik.com/hizmetler/beyanname-vergi/): KDV, muhtasar, geçici ve yıllık beyannameler; vergi planlaması.
+- [Teşvik & KOSGEB](https://tgfmalimusavirlik.com/hizmetler/tesvik-kosgeb/): KOSGEB, yatırım teşvikleri ve devlet desteklerinde uygunluk ve başvuru.
+- [Teknopark & Ar-Ge](https://tgfmalimusavirlik.com/hizmetler/teknopark/): Yazılım ve Ar-Ge işletmeleri için teknopark başvurusu, kazanç istisnası, personel stopaj teşviki ve SGK desteği.
+- [Danışmanlık](https://tgfmalimusavirlik.com/hizmetler/danismanlik/): Şirket değerleme, birleşme/devir ve uluslararası vergi.
+
+## Rehber (KOBİ’ler için pratik notlar)
+- [Şahıs mı, Limited mi? Yeni İşletme İçin Hangisi?](https://tgfmalimusavirlik.com/rehber/sahis-mi-limited-mi/): Maliyet, sorumluluk, vergi ve büyüme açısından şirket türü karşılaştırması.
+- [Şişli’de Şirket Nasıl Kurulur? Adım Adım Rehber](https://tgfmalimusavirlik.com/rehber/sisli-sirket-kurulusu-rehberi/): Şirket türü seçimi, evraklar, tescil ve kuruluş sonrası yükümlülükler.
+- [Mali Müşavir Değiştirmek İstiyorum: Nasıl Olur, Zor mu?](https://tgfmalimusavirlik.com/rehber/mali-musavir-degistirme/): Devir süreci, doğru zamanlama ve dijital yetki devri.
+- [KOBİ’ler İçin Vergi ve Beyanname Takvimi](https://tgfmalimusavirlik.com/rehber/kobi-vergi-beyanname-takvimi/): KDV, muhtasar, geçici ve yıllık beyanname takvimi ve gecikmenin sonuçları.
+- [E-Tebligatı Kaçırmak Neden Pahalıya Patlar?](https://tgfmalimusavirlik.com/rehber/e-tebligat-kacirmayin/): E-tebligat 5. günün sonunda tebliğ sayılır; süre ve dava hakkı takibi.
+- [Serbest Meslekte Geçici Vergi ve Stopaj](https://tgfmalimusavirlik.com/rehber/serbest-meslekte-gecici-vergi/): Geçici vergi, stopaj ve yıllık gelir vergisinin aynı verginin taksitleri olması.
+- [Şirketten Para Çekmenin En Ucuz Yolu: Kâr Payı mı, Huzur Hakkı mı?](https://tgfmalimusavirlik.com/rehber/sirketten-para-cekmenin-dogru-yolu/): Huzur hakkı ile kâr dağıtımının vergi karşılaştırması.
+- [Yazılımcıysanız Teknoparka Girmeli misiniz?](https://tgfmalimusavirlik.com/rehber/teknoparka-girmeli-misiniz/): Teknopark avantajları (kazanç istisnası, stopaj teşviki, SGK desteği) ve kimlere uyduğu.
+- [Üretim İşine Girecekseniz: Yatırım Teşvik Belgesini Atlamayın](https://tgfmalimusavirlik.com/rehber/uretim-yatirim-tesvik-belgesi/): Yatırım teşvik belgesinin sağladığı avantajlar ve neden yatırımdan önce alınması gerektiği.
+
+## Kurumsal
+- [Hakkımızda](https://tgfmalimusavirlik.com/hakkimizda/): Gökay Gül — Serbest Muhasebeci Mali Müşavir (SMMM), İSMMMO üyesi, 20+ yıl saha deneyimi.
+- [Hizmetler](https://tgfmalimusavirlik.com/hizmetler/): Tüm hizmetlerin listesi.
+- [Rehber](https://tgfmalimusavirlik.com/rehber/): KOBİ’ler için pratik mali müşavirlik notları.
+
+## Künye
+- Unvan: Gökay Gül — Serbest Muhasebeci Mali Müşavir (SMMM)
+- Oda: İstanbul SMMM Odası (İSMMMO), TÜRMOB ruhsatlı
+- Hizmet bölgesi: İstanbul geneli (ofis: Okmeydanı / Şişli / İstanbul)
+- Telefon: 0212 320 6006 · WhatsApp: 0541 852 8604
+- Web: https://tgfmalimusavirlik.com
+
+## English version
+> An English-language version of the site is available under /en/. Same SME accounting positioning, translated faithfully. Gökay Gül — Certified Public Accountant (SMMM) — serving SMEs across Istanbul.
+- [Home (EN)](https://tgfmalimusavirlik.com/en/): SME financial advisor in Istanbul; company formation, accounting & payroll, tax returns, incentives.
+- [Services (EN)](https://tgfmalimusavirlik.com/en/services/): Company Formation, Accounting & Payroll, Tax Returns, Incentives & KOSGEB, Technopark & R&D, Advisory.
+- [About (EN)](https://tgfmalimusavirlik.com/en/about/): Gökay Gül — Certified Public Accountant (SMMM), İSMMMO member, 20+ years of field experience.
+- [Guide (EN)](https://tgfmalimusavirlik.com/en/guide/): Practical accounting notes for SMEs in Istanbul.
+- [Contact (EN)](https://tgfmalimusavirlik.com/en/contact/): Bilaş İş Merkezi, Şişli/Istanbul. Phone 0212 320 6006, WhatsApp 0541 852 8604.

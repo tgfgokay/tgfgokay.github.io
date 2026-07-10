@@ -1,0 +1,224 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import ContactSection from '../components/ContactSection.astro';
+import { site, services, whyPoints, processSteps } from '../data/site';
+
+const waHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.whatsappText)}`;
+const description =
+  'İstanbul genelinde KOBİ’lerin yanındaki mali müşavir. Şirket kuruluşu, muhasebe & bordro, beyanname & vergi, teşvik & KOSGEB. Telefonumuz hep açık — ücretsiz ön görüşme.';
+
+// Ana sayfa için FAQ + hizmet listesi şeması
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Şirket kuruluşu ne kadar sürüyor?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Evraklar tamamsa şahıs işletmesi genellikle 1–2 gün, limited/anonim şirket birkaç iş günü içinde kurulur. Süreci baştan sona ben yürütürüm.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Mevcut mali müşavirimden size geçmek zor mu?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Hayır. Devir işlemlerini, kayıtların aktarımını ve gerekli bildirimleri sizin adınıza yaparım; siz sadece onay verirsiniz.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Nerede hizmet veriyorsunuz?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ofisim Şişli’de (Bilaş İş Merkezi). İstanbul genelindeki işletmelere hizmet veriyorum; işlemlerin çoğu uzaktan da yürütülebiliyor.',
+      },
+    },
+  ],
+};
+---
+
+<Base title={site.name} description={description} path="/" altPath="/en/" jsonLd={[faqSchema]}>
+  <!-- 1) HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="pill">
+        <Icon name="pin" /> İstanbul geneli · Yeni mükellef kabul ediyorum
+      </span>
+      <h1>İstanbul’da KOBİ’nizin Yanındaki <span class="grad-text">Mali Müşavir</span></h1>
+      <p class="lede">
+        Şirket kuruluşundan günlük muhasebeye, beyannameden teşvik başvurusuna kadar
+        işletmenizin tüm mali işlerini güvenle bana bırakın. İstanbul’un her ilçesine hizmet veriyorum, telefonum hep açık.
+      </p>
+      <div class="hero-cta">
+        <a href={waHref} class="btn btn-primary" rel="noopener" target="_blank">
+          <Icon name="chat" /> Ücretsiz Ön Görüşme
+        </a>
+        <a href="/hizmetler/sirket-kurulusu/" class="btn btn-ghost">
+          Şirket Kurmak İstiyorum <Icon name="arrow" />
+        </a>
+      </div>
+      <div class="trust-strip hero-trust">
+        <span>SMMM ruhsatlı</span>
+        <span>TÜRMOB üyesi</span>
+        <span>Şişli / İstanbul</span>
+      </div>
+    </div>
+    <div class="hero-glow" aria-hidden="true"></div>
+  </section>
+
+  <!-- 2) HİZMETLER -->
+  <section class="section bg-wash">
+    <div class="container">
+      <span class="eyebrow">Hizmetler</span>
+      <h2>Baştan sona mali işlerinizin yanındayım</h2>
+      <p class="lede">İhtiyacınız hangisiyse; sıfırdan kurulum, düzenli takip ya da tek seferlik danışmanlık.</p>
+      <div class="grid grid-3 svc-grid">
+        {services.map((s) => (
+          <a href={`/hizmetler/${s.slug}/`} class="card svc-card">
+            <span class="icon-badge"><Icon name={s.icon} /></span>
+            <h3>{s.title}</h3>
+            <p>{s.short}</p>
+            <span class="detay">detay <Icon name="arrow" /></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3) NEDEN BİZ -->
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Neden ben?</span>
+      <h2>Bir muhasebeciden fazlası</h2>
+      <div class="grid grid-3 why-grid">
+        {whyPoints.map((w, i) => (
+          <div class="why">
+            <span class="icon-badge"><Icon name={['chat', 'shield', 'eye'][i]} /></span>
+            <h3>{w.title}</h3>
+            <p>{w.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) SÜREÇ -->
+  <section class="section bg-wash">
+    <div class="container">
+      <span class="eyebrow">Nasıl çalışıyoruz</span>
+      <h2>4 adımda birlikte başlıyoruz</h2>
+      <ol class="steps">
+        {processSteps.map((p, i) => (
+          <li class="step">
+            <span class="step-no">{i + 1}</span>
+            <h3>{p.title}</h3>
+            <p>{p.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- 5) MÜKELLEF PORTALI -->
+  <section class="section">
+    <div class="container">
+      <div class="portal">
+        <div>
+          <span class="eyebrow" style="color:#fff">Mevcut müşteriler</span>
+          <h2>Evraklarınıza 7/24 ulaşın</h2>
+          <p>Mükellef misiniz? Belgelerinize, beyannamelerinize ve raporlarınıza mükellef portalından dilediğiniz an ulaşabilirsiniz.</p>
+        </div>
+        <a href={site.portalUrl} class="btn btn-ghost" rel="noopener" target="_blank">
+          Mükellef Girişi <Icon name="arrow" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6) İLETİŞİM (paylaşılan bölüm) -->
+  <ContactSection />
+</Base>
+
+<style>
+  /* HERO */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(3.5rem, 9vw, 7rem);
+    background: linear-gradient(180deg, var(--wash) 0%, var(--white) 100%);
+  }
+  .hero .pill { margin-bottom: 1.5rem; }
+  .hero h1 { max-width: 16ch; }
+  .hero .lede { margin-top: 1.25rem; max-width: 56ch; }
+  .hero-cta { display: flex; gap: 0.85rem; flex-wrap: wrap; margin-top: 2rem; }
+  .hero-trust { margin-top: 2.25rem; }
+  .hero-glow {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 45vw;
+    height: 45vw;
+    max-width: 620px;
+    max-height: 620px;
+    background: radial-gradient(circle, rgba(138, 123, 255, 0.28), transparent 65%);
+    filter: blur(30px);
+    pointer-events: none;
+  }
+
+  /* HİZMET KARTLARI */
+  .svc-grid { margin-top: 2rem; }
+  .svc-card { display: flex; flex-direction: column; text-decoration: none; color: var(--ink); }
+  .svc-card:hover { text-decoration: none; }
+  .svc-card p { color: var(--slate); font-size: 0.95rem; flex: 1; }
+  .detay {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    color: var(--blurple); font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem;
+  }
+  .detay :global(svg) { width: 16px; height: 16px; transition: transform 0.15s ease; }
+  .svc-card:hover .detay :global(svg) { transform: translateX(3px); }
+
+  /* NEDEN BİZ */
+  .why-grid { margin-top: 2rem; }
+  .why h3 { margin-top: 0.25rem; }
+  .why p { color: var(--slate); font-size: 0.96rem; }
+
+  /* SÜREÇ */
+  .steps {
+    list-style: none; margin: 2rem 0 0; padding: 0;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem;
+    counter-reset: step;
+  }
+  .step {
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  .step-no {
+    display: grid; place-items: center;
+    width: 38px; height: 38px; border-radius: 10px;
+    background: var(--grad); color: #fff; font-weight: 700;
+    margin-bottom: 0.9rem;
+  }
+  .step h3 { font-size: 1.05rem; }
+  .step p { color: var(--slate); font-size: 0.93rem; margin: 0; }
+
+  /* PORTAL */
+  .portal {
+    background: var(--grad);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: clamp(1.75rem, 4vw, 2.75rem);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1.5rem; flex-wrap: wrap;
+  }
+  .portal h2 { color: #fff; margin-bottom: 0.5rem; }
+  .portal p { color: rgba(255,255,255,0.9); margin: 0; max-width: 52ch; }
+  .portal .btn-ghost { background: #fff; color: var(--indigo); border-color: #fff; white-space: nowrap; }
+  .portal .btn-ghost:hover { background: var(--wash); color: var(--indigo); }
+</style>

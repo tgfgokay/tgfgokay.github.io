@@ -1,0 +1,22 @@
+{
+  "name": "tgf-mali-musavirlik",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "covers": "node scripts/generate-covers.mjs",
+    "prebuild": "node scripts/generate-covers.mjs",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource-variable/sora": "^5.1.0",
+    "@fontsource/sora": "^5.2.8",
+    "@resvg/resvg-js": "^2.6.2",
+    "astro": "^4.16.18",
+    "satori": "^0.26.0"
+  }
+}

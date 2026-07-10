@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactSection from '../components/ContactSection.astro';
+import { site } from '../data/site';
+
+const description =
+  'TGF Mali Müşavirlik iletişim: Bilaş İş Merkezi, Şişli/İstanbul. Telefon 0212 320 6006, WhatsApp ve harita. 1 iş günü içinde dönüş.';
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Ana Sayfa', item: site.url + '/' },
+    { '@type': 'ListItem', position: 2, name: 'İletişim', item: site.url + '/iletisim/' },
+  ],
+};
+---
+<Base title="İletişim" description={description} path="/iletisim/" altPath="/en/contact/" jsonLd={[breadcrumb]}>
+  <section class="page-head">
+    <div class="container">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="/">Ana Sayfa</a> <span>/</span> İletişim
+      </nav>
+      <h1>Bize ulaşın</h1>
+      <p class="lede">
+        Şişli’deki ofisimden İstanbul geneline hizmet veriyorum. Telefon, WhatsApp ya da
+        aşağıdaki form — hangisi kolayınıza gelirse.
+      </p>
+    </div>
+  </section>
+
+  <ContactSection heading="Yazın, ben döneyim" eyebrow="" />
+</Base>
+
+<style>
+  .page-head { padding-top: clamp(2.5rem, 6vw, 4rem); }
+  .crumb { font-size: 0.88rem; color: var(--slate); margin-bottom: 1rem; }
+  .crumb a { color: var(--slate); }
+  .crumb span { margin: 0 0.4rem; }
+</style>

@@ -1,0 +1,73 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import CtaStrip from '../../../components/CtaStrip.astro';
+import { site } from '../../../data/site';
+import { pages } from '../../../i18n/en';
+
+const P = pages.guide;
+
+const posts = (await getCollection('guide', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: site.url + '/en/' },
+    { '@type': 'ListItem', position: 2, name: 'Guide', item: site.url + '/en/guide/' },
+  ],
+};
+---
+<Base title="Guide" description={P.metaDescription} path="/en/guide/" lang="en" altPath="/rehber/" jsonLd={[breadcrumb]}>
+  <section class="section">
+    <div class="container">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="/en/">Home</a> <span>/</span> Guide
+      </nav>
+      <span class="eyebrow">{P.eyebrow}</span>
+      <h1>{P.h1}</h1>
+      <p class="lede">{P.lede}</p>
+
+      <div class="grid grid-2 post-grid">
+        {posts.map((p) => (
+          <a href={`/en/guide/${p.slug}/`} class="card post-card">
+            <img src={`/guide-covers/${p.slug}.png`} alt={p.data.title} class="thumb" width="1200" height="630" loading="lazy" />
+            <div class="body">
+              <div>
+                <span class="date">{fmt(p.data.date)}</span>
+                <h2>{p.data.title}</h2>
+                <p>{p.data.description}</p>
+              </div>
+              <span class="detay">{P.readMore} <Icon name="arrow" /></span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaStrip heading={P.ctaHeading} text={P.ctaText} lang="en" />
+</Base>
+
+<style>
+  .crumb { font-size: 0.88rem; color: var(--slate); margin-bottom: 1rem; }
+  .crumb a { color: var(--slate); }
+  .crumb span { margin: 0 0.4rem; }
+  .post-grid { margin-top: 2.25rem; }
+  .post-card { display: flex; flex-direction: column; gap: 0; padding: 0; overflow: hidden; text-decoration: none; color: var(--ink); }
+  .post-card:hover { text-decoration: none; }
+  .thumb { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--line); }
+  .post-card .body { display: flex; flex-direction: column; justify-content: space-between; gap: 1.25rem; flex: 1; padding: 1.5rem; }
+  .date { font-size: 0.82rem; color: var(--slate); font-weight: 500; }
+  .post-card h2 { font-size: 1.3rem; margin: 0.4rem 0 0.5rem; }
+  .post-card p { color: var(--slate); font-size: 0.95rem; margin: 0; }
+  .detay { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--blurple); font-weight: 600; font-size: 0.9rem; }
+  .detay :global(svg) { width: 16px; height: 16px; transition: transform 0.15s ease; }
+  .post-card:hover .detay :global(svg) { transform: translateX(3px); }
+</style>

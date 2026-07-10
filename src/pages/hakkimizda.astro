@@ -1,0 +1,246 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import CtaStrip from '../components/CtaStrip.astro';
+import { site, whyPoints } from '../data/site';
+import portrait from '../assets/images/gokay-portrait.jpg';
+
+const description =
+  'Gökay Gül — Serbest Muhasebeci Mali Müşavir. İstanbul genelinde KOBİ’lerin yanında; ulaşılabilir, şeffaf ve sizi önceden uyaran bir mali müşavir.';
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Ana Sayfa', item: site.url + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Hakkımızda', item: site.url + '/hakkimizda/' },
+  ],
+};
+
+// Person + ProfilePage — yazar/kurucu kimliği (E-E-A-T). AI arama motorları
+// için varlık (entity) sinyali: kim, hangi meslek, hangi odaya bağlı, nerede.
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': site.url + '/#gokay',
+  name: site.personName,
+  jobTitle: site.title,
+  description:
+    'İstanbul’da 20 yılı aşkın saha deneyimine sahip Serbest Muhasebeci Mali Müşavir (SMMM). KOBİ’lere şirket kuruluşu, muhasebe, vergi planlaması ve teşvik konularında hizmet veriyor.',
+  url: site.url + '/hakkimizda/',
+  image: new URL('/marka/tgf-emblem.svg', site.url).href,
+  worksFor: { '@id': site.url + '/#business' },
+  memberOf: { '@type': 'Organization', name: site.chamber },
+  knowsAbout: [
+    'KOBİ mali müşavirliği',
+    'Şirket kuruluşu',
+    'Muhasebe ve bordro',
+    'Beyanname ve vergi planlaması',
+    'Teşvik ve KOSGEB',
+    'Teknopark ve Ar-Ge',
+    'Yabancı yatırımcı danışmanlığı',
+  ],
+  hasCredential: {
+    '@type': 'EducationalOccupationalCredential',
+    credentialCategory: 'Serbest Muhasebeci Mali Müşavir (SMMM)',
+    recognizedBy: { '@type': 'Organization', name: 'TÜRMOB' },
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Şişli',
+    addressRegion: 'İstanbul',
+    addressCountry: 'TR',
+  },
+  sameAs: [site.linkedin, site.gokaygul],
+};
+
+const profilePage = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  mainEntity: { '@id': site.url + '/#gokay' },
+  about: { '@id': site.url + '/#gokay' },
+};
+
+// Gökay'dan gelecek gerçek veri (portre, yıl, mükellef sayısı) — şimdilik yer tutucu.
+const stats = [
+  { big: '20+ Yıl', small: 'Saha deneyimi', icon: 'award' },
+  { big: 'SMMM', small: 'TÜRMOB ruhsatlı', icon: 'shield' },
+  { big: 'İSMMMO', small: 'Oda üyesi', icon: 'check' },
+  { big: 'Şişli', small: 'İstanbul ofisi', icon: 'pin' },
+];
+
+const uzmanlik = [
+  'KOBİ mali müşavirliği',
+  'Şirket kuruluşu',
+  'Teşvik & KOSGEB',
+  'Muhasebe & bordro',
+  'Beyanname & vergi planlaması',
+  'Yabancı yatırımcı danışmanlığı',
+];
+---
+<Base title="Hakkımızda" description={description} path="/hakkimizda/" altPath="/en/about/" jsonLd={[breadcrumb, person, profilePage]}>
+  <section class="section">
+    <div class="container">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="/">Ana Sayfa</a> <span>/</span> Hakkımızda
+      </nav>
+      <span class="eyebrow">Hakkımızda</span>
+      <h1>Yanınızdaki mali müşavir</h1>
+      <p class="lede">
+        Küçük ve orta ölçekli işletmelerin en çok ihtiyaç duyduğu şey, telefonu açan ve
+        ne yaptığını açıkça anlatan bir mali müşavir. Ben tam da bunu yapıyorum.
+      </p>
+
+      <div class="intro-grid">
+        <!-- Portre yer tutucu (Gökay'dan gerçek foto gelince değişecek) -->
+        <figure class="portrait">
+          <Image
+            src={portrait}
+            alt="Gökay Gül — Serbest Muhasebeci Mali Müşavir"
+            widths={[400, 640, 800]}
+            sizes="(max-width: 800px) 320px, 400px"
+            loading="eager"
+          />
+          <figcaption class="portrait-cap">Gökay Gül · SMMM</figcaption>
+        </figure>
+
+        <div class="note">
+          <h2>Kurucu notu</h2>
+          <p>
+            Merhaba, ben Gökay. Yıllardır İstanbul’da işletmelerin mali işlerini yürütüyorum.
+            Bu işte gördüğüm en büyük eksik, sahiplerin sorularının cevapsız kalması oldu.
+          </p>
+          <p>
+            Ben farklı çalışıyorum: telefonu açarım, WhatsApp’tan dönerim, bir ceza doğmadan
+            önce sizi uyarırım. Rakamların arkasına saklanmam; ne yaptığımı ve ne ödediğinizi
+            sade bir dille anlatırım.
+          </p>
+          <p>
+            İster yeni bir şirket kuruyor olun, ister mevcut düzeninizi bana devretmek isteyin —
+            işin kağıt tarafını ben üstlenirim, siz işinize bakarsınız.
+          </p>
+          <p class="sign">— Gökay Gül, Serbest Muhasebeci Mali Müşavir</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RAKAMLARLA / GÜVEN -->
+  <section class="section bg-wash">
+    <div class="container">
+      <span class="eyebrow">Kısaca</span>
+      <h2>Güvenebileceğiniz zemin</h2>
+      <div class="grid grid-4 stat-grid">
+        {stats.map((s) => (
+          <div class="card stat">
+            <span class="icon-badge"><Icon name={s.icon} /></span>
+            <strong>{s.big}</strong>
+            <span>{s.small}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DEĞERLERİM -->
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Değerlerim</span>
+      <h2>Çalışma şeklim üç söze sığıyor</h2>
+      <div class="grid grid-3 val-grid">
+        {whyPoints.map((w, i) => (
+          <div class="card val">
+            <span class="icon-badge"><Icon name={['chat', 'eye', 'shield'][i]} /></span>
+            <h3>{w.title}</h3>
+            <p>{w.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- UZMANLIK -->
+  <section class="section bg-wash">
+    <div class="container">
+      <span class="eyebrow">Uzmanlık alanlarım</span>
+      <h2>En çok bu konularda yanınızdayım</h2>
+      <div class="tags">
+        {uzmanlik.map((t) => <span class="tag">{t}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <CtaStrip heading="Tanışmaya ne dersiniz?" />
+</Base>
+
+<style>
+  .crumb { font-size: 0.88rem; color: var(--slate); margin-bottom: 1rem; }
+  .crumb a { color: var(--slate); }
+  .crumb span { margin: 0 0.4rem; }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    align-items: start;
+  }
+  .portrait {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius);
+    background: var(--wash);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    margin: 0;
+  }
+  .portrait :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 12%;
+    display: block;
+  }
+  .portrait-cap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    color: #fff;
+    font-weight: 500;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+  }
+  .note h2 { margin-bottom: 0.75rem; }
+  .note p { color: var(--slate); }
+  .note .sign { color: var(--ink); font-weight: 600; margin-top: 1rem; }
+
+  .stat-grid { margin-top: 1.75rem; }
+  .stat { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.15rem; }
+  .stat .icon-badge { margin-bottom: 0.75rem; }
+  .stat strong { font-size: 1.35rem; color: var(--ink); }
+  .stat span { color: var(--slate); font-size: 0.9rem; }
+
+  .val-grid { margin-top: 1.75rem; }
+  .val h3 { margin-top: 0.25rem; }
+  .val p { color: var(--slate); font-size: 0.96rem; margin: 0; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+  .tag {
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid var(--line);
+    font-weight: 500;
+    font-size: 0.92rem;
+    color: var(--indigo);
+  }
+
+  @media (max-width: 820px) {
+    .intro-grid { grid-template-columns: 1fr; }
+    .portrait { max-width: 320px; }
+  }
+</style>

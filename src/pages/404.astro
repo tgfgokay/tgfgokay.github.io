@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import { services } from '../data/site';
+---
+<Base title="Sayfa bulunamadı" description="Aradığınız sayfa bulunamadı. Ana sayfaya dönebilir ya da hizmetlerimize göz atabilirsiniz.">
+  <section class="section nf">
+    <div class="container">
+      <span class="grad-text big">404</span>
+      <h1>Bu sayfayı bulamadım</h1>
+      <p class="lede">Aradığınız sayfa taşınmış ya da hiç var olmamış olabilir. Buradan devam edebilirsiniz:</p>
+      <div class="links">
+        <a href="/" class="btn btn-primary">Ana sayfa</a>
+        <a href="/hizmetler/" class="btn btn-ghost">Hizmetler</a>
+        <a href="/iletisim/" class="btn btn-ghost">İletişim</a>
+      </div>
+      <div class="svc-links">
+        {services.map((s) => <a href={`/hizmetler/${s.slug}/`}>{s.title}</a>)}
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .nf { text-align: center; }
+  .big { font-size: clamp(4rem, 14vw, 8rem); font-weight: 800; display: block; line-height: 1; }
+  .links { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+  .svc-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+  .svc-links a { color: var(--slate); font-size: 0.92rem; }
+  .nf .lede { margin-inline: auto; }
+</style>

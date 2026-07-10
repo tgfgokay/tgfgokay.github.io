@@ -1,0 +1,62 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import CtaStrip from '../../../components/CtaStrip.astro';
+import { site } from '../../../data/site';
+import { servicesEn, pages } from '../../../i18n/en';
+
+const P = pages.services;
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: site.url + '/en/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: site.url + '/en/services/' },
+  ],
+};
+---
+<Base title="Services" description={P.metaDescription} path="/en/services/" lang="en" altPath="/hizmetler/" jsonLd={[breadcrumb]}>
+  <section class="section">
+    <div class="container">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="/en/">Home</a> <span>/</span> Services
+      </nav>
+      <span class="eyebrow">{P.eyebrow}</span>
+      <h1>{P.h1}</h1>
+      <p class="lede">{P.lede}</p>
+
+      <div class="grid grid-2 svc-grid">
+        {servicesEn.map((s) => (
+          <a href={`/en/services/${s.slug}/`} class="card svc-card">
+            <span class="icon-badge"><Icon name={s.icon} /></span>
+            <div>
+              <h2>{s.title}</h2>
+              <p>{s.summary}</p>
+              <span class="detay">{P.detail} <Icon name="arrow" /></span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaStrip lang="en" />
+</Base>
+
+<style>
+  .crumb { font-size: 0.88rem; color: var(--slate); margin-bottom: 1rem; }
+  .crumb a { color: var(--slate); }
+  .crumb span { margin: 0 0.4rem; }
+  .svc-grid { margin-top: 2.25rem; }
+  .svc-card { display: flex; gap: 1.1rem; align-items: flex-start; text-decoration: none; color: var(--ink); }
+  .svc-card:hover { text-decoration: none; }
+  .svc-card .icon-badge { flex: none; margin-bottom: 0; }
+  .svc-card h2 { font-size: 1.25rem; margin-bottom: 0.4rem; }
+  .svc-card p { color: var(--slate); font-size: 0.95rem; }
+  .detay {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    color: var(--blurple); font-weight: 600; font-size: 0.9rem;
+  }
+  .detay :global(svg) { width: 16px; height: 16px; }
+</style>

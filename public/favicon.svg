@@ -1,0 +1,13 @@
+<svg width="256" height="256" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TGF favicon">
+  <defs>
+    <linearGradient id="tgfFav" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8A7BFF"></stop>
+      <stop offset="0.5" stop-color="#635BFF"></stop>
+      <stop offset="1" stop-color="#4B45C6"></stop>
+    </linearGradient>
+  </defs>
+  <path d="M29 3 L71 3 Q97 3 97 29 L97 71 Q97 97 71 97 L29 97 Q3 97 3 71 L3 29 Q3 3 29 3 Z" fill="url(#tgfFav)"></path>
+  <g transform="translate(36.2280,66.0600) scale(0.044000,-0.044000)" fill="#FFFFFF">
+    <path transform="translate(0.00,0)" d="M220 0V588H406V0ZM20 568V730H606V568Z"/>
+  </g>
+</svg>

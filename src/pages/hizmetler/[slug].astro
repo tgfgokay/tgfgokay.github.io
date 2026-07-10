@@ -1,0 +1,204 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import CtaStrip from '../../components/CtaStrip.astro';
+import { site, services } from '../../data/site';
+import { serviceDetails } from '../../data/service-details';
+import { trToEnSlug } from '../../i18n/en';
+
+export function getStaticPaths() {
+  return services.map((s) => ({ params: { slug: s.slug }, props: { service: s } }));
+}
+
+const { service } = Astro.props;
+const detail = serviceDetails[service.slug];
+const waHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
+  `Merhaba, ${service.title} hakkında bilgi almak istiyorum.`
+)}`;
+
+const description = `${service.title} — ${service.summary} İstanbul geneli, TGF Mali Müşavirlik.`;
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Ana Sayfa', item: site.url + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Hizmetler', item: site.url + '/hizmetler/' },
+    { '@type': 'ListItem', position: 3, name: service.title, item: `${site.url}/hizmetler/${service.slug}/` },
+  ],
+};
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: service.title,
+  description: service.summary,
+  serviceType: service.title,
+  areaServed: { '@type': 'City', name: 'İstanbul' },
+  provider: { '@id': site.url + '/#business' },
+};
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: detail.faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const others = services.filter((s) => s.slug !== service.slug);
+---
+<Base
+  title={service.title}
+  description={description}
+  path={`/hizmetler/${service.slug}/`}
+  altPath={`/en/services/${trToEnSlug[service.slug]}/`}
+  jsonLd={[breadcrumb, serviceSchema, faqSchema]}
+>
+  <!-- HERO -->
+  <section class="section detail-hero">
+    <div class="container">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="/">Ana Sayfa</a> <span>/</span>
+        <a href="/hizmetler/">Hizmetler</a> <span>/</span> {service.title}
+      </nav>
+      <span class="eyebrow">{service.title}</span>
+      <h1>{detail.heroTitle}</h1>
+      <p class="lede">{detail.intro}</p>
+      <div class="hero-cta">
+        <a href={waHref} class="btn btn-primary" rel="noopener" target="_blank">
+          <Icon name="chat" /> Ücretsiz Ön Görüşme
+        </a>
+        <a href={waHref} class="btn btn-wa" rel="noopener" target="_blank">
+          <Icon name="wa" /> WhatsApp’tan yaz
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ŞİRKET TÜRÜ KARTLARI (opsiyonel) -->
+  {detail.typeCards && (
+    <section class="section bg-wash">
+      <div class="container">
+        <h2>{detail.typeHeading}</h2>
+        <div class="grid grid-3 type-grid">
+          {detail.typeCards.map((c) => (
+            <div class="card type-card">
+              {c.badge && <span class="pill badge">{c.badge}</span>}
+              <h3>{c.title}</h3>
+              <p>{c.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- SÜREÇ -->
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Süreç</span>
+      <h2>{detail.stepsHeading}</h2>
+      <ol class="steps">
+        {detail.steps.map((p, i) => (
+          <li class="step">
+            <span class="step-no">{i + 1}</span>
+            <h3>{p.title}</h3>
+            <p>{p.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- NELER DAHİL -->
+  <section class="section bg-wash">
+    <div class="container">
+      <h2>{detail.includedHeading}</h2>
+      <ul class="incl">
+        {detail.included.map((it) => (
+          <li><span class="tick"><Icon name="check" /></span>{it}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section class="section">
+    <div class="container narrow">
+      <span class="eyebrow">Sık sorulanlar</span>
+      <h2>Aklınıza takılabilecekler</h2>
+      <div class="faqs">
+        {detail.faqs.map((f) => (
+          <details class="faq">
+            <summary>{f.q}<span class="chev"><Icon name="arrow" /></span></summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaStrip heading={`${service.title} için hazır mısınız?`} />
+
+  <!-- DİĞER HİZMETLER -->
+  <section class="section">
+    <div class="container">
+      <h2>Diğer hizmetler</h2>
+      <div class="grid grid-5 other-grid">
+        {others.map((s) => (
+          <a href={`/hizmetler/${s.slug}/`} class="card other-card">
+            <span class="icon-badge"><Icon name={s.icon} /></span>
+            <h3>{s.title}</h3>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .detail-hero { background: linear-gradient(180deg, var(--wash), var(--white)); }
+  .crumb { font-size: 0.88rem; color: var(--slate); margin-bottom: 1rem; }
+  .crumb a { color: var(--slate); }
+  .crumb span { margin: 0 0.4rem; }
+  .hero-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.75rem; }
+  .narrow { max-width: 780px; }
+
+  .type-grid { margin-top: 1.75rem; }
+  .type-card .badge { margin-bottom: 0.75rem; background: var(--blurple); color: #fff; border-color: transparent; }
+  .type-card h3 { margin-bottom: 0.4rem; }
+  .type-card p { color: var(--slate); font-size: 0.95rem; margin: 0; }
+
+  .steps {
+    list-style: none; margin: 1.75rem 0 0; padding: 0;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.1rem;
+  }
+  .step { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem; }
+  .step-no { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--grad); color: #fff; font-weight: 700; margin-bottom: 0.85rem; }
+  .step h3 { font-size: 1.02rem; }
+  .step p { color: var(--slate); font-size: 0.92rem; margin: 0; }
+
+  .incl { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.85rem; }
+  .incl li { display: flex; gap: 0.7rem; align-items: flex-start; font-size: 0.98rem; }
+  .tick { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 8px; background: color-mix(in srgb, var(--blurple) 12%, #fff); color: var(--blurple); flex: none; }
+  .tick :global(svg) { width: 16px; height: 16px; }
+
+  .faqs { margin-top: 1.5rem; display: grid; gap: 0.75rem; }
+  .faq { border: 1px solid var(--line); border-radius: var(--radius-sm); background: #fff; overflow: hidden; }
+  .faq summary {
+    cursor: pointer; list-style: none;
+    padding: 1rem 1.25rem; font-weight: 600;
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .chev :global(svg) { width: 18px; height: 18px; color: var(--blurple); transform: rotate(90deg); transition: transform 0.2s ease; }
+  .faq[open] .chev :global(svg) { transform: rotate(-90deg); }
+  .faq p { margin: 0; padding: 0 1.25rem 1.15rem; color: var(--slate); }
+
+  .other-grid { margin-top: 1.5rem; }
+  .other-card { text-align: center; text-decoration: none; color: var(--ink); display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
+  .other-card:hover { text-decoration: none; }
+  .other-card .icon-badge { margin-bottom: 0.25rem; }
+  .other-card h3 { font-size: 1rem; }
+</style>

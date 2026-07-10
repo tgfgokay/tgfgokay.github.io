@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import { servicesEn, pages } from '../../i18n/en';
+
+const P = pages.notFound;
+---
+<Base title={P.title} description={P.metaDescription} lang="en" path="/en/404/">
+  <section class="section nf">
+    <div class="container">
+      <span class="grad-text big">404</span>
+      <h1>{P.title}</h1>
+      <p class="lede">The page you’re looking for may have moved or never existed. You can continue from here:</p>
+      <div class="links">
+        <a href="/en/" class="btn btn-primary">{P.homeBtn}</a>
+        <a href="/en/services/" class="btn btn-ghost">{P.servicesBtn}</a>
+        <a href="/en/contact/" class="btn btn-ghost">{P.contactBtn}</a>
+      </div>
+      <div class="svc-links">
+        {servicesEn.map((s) => <a href={`/en/services/${s.slug}/`}>{s.title}</a>)}
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .nf { text-align: center; }
+  .big { font-size: clamp(4rem, 14vw, 8rem); font-weight: 800; display: block; line-height: 1; }
+  .links { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+  .svc-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+  .svc-links a { color: var(--slate); font-size: 0.92rem; }
+  .nf .lede { margin-inline: auto; }
+</style>
