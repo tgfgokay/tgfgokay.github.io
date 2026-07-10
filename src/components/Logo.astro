@@ -38,7 +38,6 @@ const gid = 'tgfLogoGrad-' + Math.random().toString(36).slice(2, 8);
   {variant === 'full' && (
     <span class="logo-word">
       <strong>TGF</strong>
-      <small>MALİ MÜŞAVİRLİK</small>
     </span>
   )}
 </span>
@@ -52,20 +51,13 @@ const gid = 'tgfLogoGrad-' + Math.random().toString(36).slice(2, 8);
   .logo-emblem { flex: none; }
   .logo-word {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     line-height: 1;
   }
   .logo-word strong {
-    font-size: 1.15rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
     color: var(--ink);
-  }
-  .logo-word small {
-    font-size: 0.6rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    color: var(--slate);
-    margin-top: 0.15rem;
   }
 </style>

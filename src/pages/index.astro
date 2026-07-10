@@ -171,6 +171,9 @@ const faqSchema = {
 
   /* HİZMET KARTLARI */
   .svc-grid { margin-top: 2rem; }
+  @media (min-width: 880px) {
+    .svc-grid { grid-template-columns: repeat(3, 1fr); }
+  }
   .svc-card { display: flex; flex-direction: column; text-decoration: none; color: var(--ink); }
   .svc-card:hover { text-decoration: none; }
   .svc-card p { color: var(--slate); font-size: 0.95rem; flex: 1; }
