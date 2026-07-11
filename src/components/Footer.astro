@@ -77,8 +77,11 @@ const year = new Date().getFullYear();
     margin-bottom: 1rem;
   }
   .desc { font-size: 0.92rem; line-height: 1.65; max-width: 42ch; margin-top: 1rem; }
-  .footer-logo :global(.logo-word strong) { color: var(--white); }
-  .footer-logo :global(.logo-word small) { color: var(--violet); }
+  /* Koyu zeminde çerçeveli logo: metin beyaz, çerçeve menekşe.
+     Selektörün tamamı :global — aksi halde Astro `.footer-logo`ya Footer'ın
+     cid'ini ekler; oysa element Logo bileşeninin cid'ini taşır ve eşleşme olmaz. */
+  :global(.footer-logo .logo-box) { border-color: var(--violet) !important; }
+  :global(.footer-logo .logo-box strong) { color: var(--white) !important; }
   .social { display: flex; gap: 1rem; margin-top: 0.5rem; }
   .social a { color: var(--violet); font-weight: 500; font-size: 0.92rem; }
   ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }

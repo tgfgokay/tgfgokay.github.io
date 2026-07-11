@@ -1,63 +1,78 @@
 ---
-// TGF logo: gradyanlı squircle amblem (beyaz "TGF") + "TGF" wordmark + tag.
-// variant: 'full' (amblem + wordmark) | 'emblem' (yalnız amblem)
+// TGF logo.
+// variant 'full'   → gokaygul tarzı ince çerçeveli kutu içinde "TGF" wordmark.
+// variant 'emblem' → gradyanlı squircle amblem (favicon / OG / küçük kullanım).
 interface Props {
   variant?: 'full' | 'emblem';
-  size?: number; // amblem px
+  size?: number; // emblem varyantında amblem px'i
   class?: string;
 }
 const { variant = 'full', size = 36, class: cls = '' } = Astro.props;
 const gid = 'tgfLogoGrad-' + Math.random().toString(36).slice(2, 8);
 ---
 
-<span class={`logo ${cls}`} data-variant={variant}>
-  <svg
-    class="logo-emblem"
-    width={size}
-    height={size}
-    viewBox="0 0 100 100"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    role="img"
-    aria-label="TGF amblem"
-  >
-    <defs>
-      <linearGradient id={gid} x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#8A7BFF"></stop>
-        <stop offset="0.5" stop-color="#635BFF"></stop>
-        <stop offset="1" stop-color="#4B45C6"></stop>
-      </linearGradient>
-    </defs>
-    <path d="M29 3 L71 3 Q97 3 97 29 L97 71 Q97 97 71 97 L29 97 Q3 97 3 71 L3 29 Q3 3 29 3 Z" fill={`url(#${gid})`}></path>
-    <g transform="translate(24.9870,59.5160) scale(0.026000,-0.026000)" fill="#FFFFFF">
-      <path transform="translate(0.00,0)" d="M220 0V588H406V0ZM20 568V730H606V568Z"></path>
-      <path transform="translate(587.54,0)" d="M427 -20Q324 -20 250.0 14.5Q176 49 129.0 105.0Q82 161 60.0 227.0Q38 293 38 356V378Q38 446 61.0 512.5Q84 579 130.5 633.0Q177 687 247.0 719.5Q317 752 411 752Q512 752 589.5 715.0Q667 678 714.0 612.5Q761 547 769 461H583Q577 494 554.0 520.5Q531 547 494.5 562.5Q458 578 411 578Q366 578 331.5 562.5Q297 547 273.5 518.5Q250 490 238.0 451.0Q226 412 226 366Q226 320 239.0 280.5Q252 241 277.0 211.5Q302 182 340.0 166.0Q378 150 427 150Q489 150 534.0 176.0Q579 202 597 245L583 135V294H753V144Q707 65 622.5 22.5Q538 -20 427 -20ZM407 258V388H813V258Z"></path>
-      <path transform="translate(1382.08,0)" d="M74 0V730H260V0ZM240 283V435H511V283ZM240 578V730H522V578Z"></path>
-    </g>
-  </svg>
-  {variant === 'full' && (
-    <span class="logo-word">
-      <strong>TGF</strong>
-    </span>
-  )}
-</span>
+{variant === 'emblem' ? (
+  <span class={`logo ${cls}`} data-variant="emblem">
+    <svg
+      class="logo-emblem"
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="TGF amblem"
+    >
+      <defs>
+        <linearGradient id={gid} x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#8A7BFF"></stop>
+          <stop offset="0.5" stop-color="#635BFF"></stop>
+          <stop offset="1" stop-color="#4B45C6"></stop>
+        </linearGradient>
+      </defs>
+      <path d="M29 3 L71 3 Q97 3 97 29 L97 71 Q97 97 71 97 L29 97 Q3 97 3 71 L3 29 Q3 3 29 3 Z" fill={`url(#${gid})`}></path>
+      <g transform="translate(24.9870,59.5160) scale(0.026000,-0.026000)" fill="#FFFFFF">
+        <path transform="translate(0.00,0)" d="M220 0V588H406V0ZM20 568V730H606V568Z"></path>
+        <path transform="translate(587.54,0)" d="M427 -20Q324 -20 250.0 14.5Q176 49 129.0 105.0Q82 161 60.0 227.0Q38 293 38 356V378Q38 446 61.0 512.5Q84 579 130.5 633.0Q177 687 247.0 719.5Q317 752 411 752Q512 752 589.5 715.0Q667 678 714.0 612.5Q761 547 769 461H583Q577 494 554.0 520.5Q531 547 494.5 562.5Q458 578 411 578Q366 578 331.5 562.5Q297 547 273.5 518.5Q250 490 238.0 451.0Q226 412 226 366Q226 320 239.0 280.5Q252 241 277.0 211.5Q302 182 340.0 166.0Q378 150 427 150Q489 150 534.0 176.0Q579 202 597 245L583 135V294H753V144Q707 65 622.5 22.5Q538 -20 427 -20ZM407 258V388H813V258Z"></path>
+        <path transform="translate(1382.08,0)" d="M74 0V730H260V0ZM240 283V435H511V283ZM240 578V730H522V578Z"></path>
+      </g>
+    </svg>
+  </span>
+) : (
+  <span class={`logo logo-framed ${cls}`} data-variant="full">
+    <span class="logo-box"><strong>TGF</strong></span>
+  </span>
+)}
 
 <style>
   .logo {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
   }
   .logo-emblem { flex: none; }
-  .logo-word {
-    display: flex;
+
+  /* gokaygul "İmza" mantığı — ince çerçeveli kutu, TGF paletiyle */
+  .logo-box {
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
+    padding: 0.34rem 0.72rem;
+    border: 1.5px solid var(--blurple);
+    border-radius: 11px;
     line-height: 1;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
-  .logo-word strong {
-    font-size: 1.4rem;
+  .logo-box strong {
+    font-size: 1.18rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.16em;
+    /* letter-spacing sağ boşluğu dengele */
+    margin-right: -0.16em;
     color: var(--ink);
+  }
+  /* header'daki brand link'in hover'ında hafif canlanma */
+  :global(.brand:hover) .logo-box {
+    border-color: var(--indigo);
+    box-shadow: 0 2px 10px rgba(99, 91, 255, 0.18);
   }
 </style>
