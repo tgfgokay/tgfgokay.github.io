@@ -2,8 +2,10 @@
 // TGF logo.
 // variant 'full'   → gokaygul tarzı ince çerçeveli kutu içinde "TGF" wordmark.
 // variant 'emblem' → gradyanlı squircle amblem (favicon / OG / küçük kullanım).
+// variant 'titled' → "TGF" wordmark + altında ince "MALİ MÜŞAVİRLİK" satırı.
+// variant 'framed' → ince Blurple çerçeveli kutu içinde "TGF".
 interface Props {
-  variant?: 'full' | 'emblem';
+  variant?: 'full' | 'titled' | 'framed' | 'emblem';
   size?: number; // emblem varyantında amblem px'i
   class?: string;
 }
@@ -38,8 +40,17 @@ const gid = 'tgfLogoGrad-' + Math.random().toString(36).slice(2, 8);
       </g>
     </svg>
   </span>
+) : variant === 'titled' ? (
+  <span class={`logo logo-titled ${cls}`} data-variant="titled">
+    <span class="logo-box"><strong>TGF</strong></span>
+    <span class="logo-sub">MALİ MÜŞAVİRLİK</span>
+  </span>
+) : variant === 'framed' ? (
+  <span class={`logo logo-framed ${cls}`} data-variant="framed">
+    <span class="logo-box framed"><strong>TGF</strong></span>
+  </span>
 ) : (
-  <span class={`logo logo-framed ${cls}`} data-variant="full">
+  <span class={`logo ${cls}`} data-variant="full">
     <span class="logo-box"><strong>TGF</strong></span>
   </span>
 )}
@@ -67,4 +78,27 @@ const gid = 'tgfLogoGrad-' + Math.random().toString(36).slice(2, 8);
     transition: color 0.2s ease;
   }
   :global(.brand:hover) .logo-box strong { color: var(--blurple); }
+
+  /* variant 'titled' — wordmark + meslek satırı */
+  .logo-titled { flex-direction: column; align-items: flex-start; line-height: 1; }
+  .logo-titled .logo-sub {
+    font-size: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    margin-top: 0.32rem;
+    margin-left: 0.06em;
+    color: var(--slate);
+  }
+
+  /* variant 'framed' — ince Blurple çerçeve */
+  .logo-box.framed {
+    padding: 0.32rem 0.7rem;
+    border: 1.5px solid var(--blurple);
+    border-radius: 11px;
+  }
+  .logo-box.framed strong {
+    font-size: 1.18rem;
+    letter-spacing: 0.14em;
+    margin-right: -0.14em;
+  }
 </style>
