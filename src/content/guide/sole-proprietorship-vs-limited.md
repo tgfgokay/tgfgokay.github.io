@@ -1,6 +1,7 @@
 ---
 title: "Sole Proprietorship or Limited Company? Which One for a New Business?"
-description: "The question new business owners ask most: a sole proprietorship or a limited company? I’ve compared the differences in cost, liability, tax and growth, from an accountant’s point of view."
+seoTitle: "Sole Proprietorship or Limited Company?"
+description: "Sole proprietorship or limited company? Cost, liability, tax and growth compared from an accountant’s point of view."
 date: 2026-07-10
 relatedService: "company-formation"
 tags: ["company formation", "sole proprietorship", "limited company", "sme"]

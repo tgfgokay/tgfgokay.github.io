@@ -1,6 +1,7 @@
 ---
 title: "I Want to Change My Accountant: How Does It Work, Is It Hard?"
-description: "Changing your accountant is your right. Your ledger can’t be withheld, but the real work isn’t on paper — it’s in the transfer of digital authorisations. I’ve explained the handover process, the right timing, and how I run the transfer for you, in plain language."
+seoTitle: "Changing Your Accountant: How the Handover Works"
+description: "Changing your accountant is your right. The real work is the transfer of digital authorisations. The handover process and timing, in plain language."
 date: 2026-07-10
 relatedService: "accounting-payroll"
 tags: ["changing accountant", "handover", "cpa", "sme"]

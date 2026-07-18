@@ -1,6 +1,7 @@
 ---
 title: "How to Set Up a Company in Şişli: A Step-by-Step Guide"
-description: "A step-by-step process for anyone wanting to start a company in Şişli or across Istanbul: choosing the company type, the documents you need, registration and post-formation obligations. Explained plainly, from an accountant’s point of view."
+seoTitle: "How to Set Up a Company in Şişli: Step-by-Step"
+description: "A step-by-step guide to starting a company in Şişli or Istanbul: choosing the type, documents, registration and post-formation obligations."
 date: 2026-07-10
 relatedService: "company-formation"
 tags: ["company formation", "sisli", "istanbul", "sme"]

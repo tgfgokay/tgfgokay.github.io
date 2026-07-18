@@ -57,7 +57,8 @@ const article = {
 };
 ---
 <Base
-  title={post.data.title}
+  title={post.data.seoTitle ?? post.data.title}
+  exactTitle={Boolean(post.data.seoTitle)}
   description={post.data.description}
   path={`/rehber/${post.slug}/`}
   altPath={rehberToGuideSlug[post.slug] ? `/en/guide/${rehberToGuideSlug[post.slug]}/` : undefined}
@@ -72,7 +73,7 @@ const article = {
         <a href="/rehber/">Rehber</a> <span>/</span> {post.data.title}
       </nav>
 
-      <img src={cover} alt={post.data.title} class="cover" width="1200" height="630" loading="eager" />
+      <img src={cover} alt={post.data.title} class="cover" width="1200" height="630" loading="eager" fetchpriority="high" />
 
       <h1>{post.data.title}</h1>
       <div class="byline">

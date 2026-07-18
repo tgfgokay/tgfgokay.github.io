@@ -21,6 +21,8 @@ interface Props {
   lang?: Lang;
   /** karşı dildeki aynı sayfanın yolu (hreflang + dil değiştirici için) */
   altPath?: string;
+  /** true → title'a marka suffix'i eklenmez (uzun rehber başlıkları için) */
+  exactTitle?: boolean;
 }
 const {
   title,
@@ -31,6 +33,7 @@ const {
   ogImage: ogImageProp,
   lang = 'tr',
   altPath,
+  exactTitle = false,
 } = Astro.props;
 const L = ui[lang];
 const otherLang: Lang = lang === 'tr' ? 'en' : 'tr';
@@ -39,8 +42,11 @@ const canonical = new URL(path ?? Astro.url.pathname, site.url).href;
 const altUrl = altPath ? new URL(altPath, site.url).href : undefined;
 // x-default → Türkçe sürüm (varsayılan dil)
 const xDefault = lang === 'tr' ? canonical : altUrl;
-const fullTitle =
-  title === site.name ? `${site.name} — ${L.brandSuffix}` : `${title} | ${site.name}`;
+const fullTitle = exactTitle
+  ? title
+  : title === site.name
+    ? `${site.name} — ${L.brandSuffix}`
+    : `${title} | ${site.name}`;
 const hasCustomOg = Boolean(ogImageProp);
 const ogImage = new URL(ogImageProp ?? '/marka/tgf-emblem.svg', site.url).href;
 

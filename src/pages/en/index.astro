@@ -1,8 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
 import ContactSection from '../../components/ContactSection.astro';
 import { site } from '../../data/site';
+import portrait from '../../assets/images/gokay-portrait.jpg';
 import { servicesEn, whyPointsEn, processStepsEn, pages } from '../../i18n/en';
 import { ui } from '../../i18n/ui';
 
@@ -86,6 +88,22 @@ const faqSchema = {
           </div>
         ))}
       </div>
+
+      <div class="person-band">
+        <Image src={portrait} alt="Gökay Gül — Certified Public Accountant (SMMM)" width={96} height={96} class="person-photo" loading="lazy" />
+        <div class="person-info">
+          <strong>Gökay Gül</strong>
+          <span>Certified Public Accountant (SMMM) · TÜRMOB licensed · İSMMMO member</span>
+        </div>
+        <a href="/en/about/" class="btn btn-ghost person-btn">
+          About me <Icon name="arrow" />
+        </a>
+      </div>
+
+      <p class="fee-note">
+        <strong>Fees:</strong> set together within the İSMMMO minimum tariff framework, based on
+        your business volume and workload. The first call is always free.
+      </p>
     </div>
   </section>
 
@@ -168,6 +186,26 @@ const faqSchema = {
   .why-grid { margin-top: 2rem; }
   .why h3 { margin-top: 0.25rem; }
   .why p { color: var(--slate); font-size: 0.96rem; }
+
+  /* PERSON BAND + FEE NOTE */
+  .person-band {
+    display: flex; align-items: center; gap: 1.15rem; flex-wrap: wrap;
+    margin-top: 2.25rem; padding: 1.25rem 1.5rem;
+    background: var(--wash); border: 1px solid var(--line); border-radius: var(--radius);
+  }
+  .person-photo {
+    width: 72px; height: 72px; border-radius: 50%;
+    object-fit: cover; flex: none; display: block;
+    border: 2px solid var(--white); box-shadow: 0 2px 10px rgba(26, 31, 54, 0.12);
+  }
+  .person-info { display: flex; flex-direction: column; gap: 0.15rem; flex: 1; min-width: 220px; }
+  .person-info strong { color: var(--ink); font-size: 1.05rem; }
+  .person-info span { color: var(--slate); font-size: 0.92rem; }
+  .person-btn { white-space: nowrap; }
+  .fee-note {
+    margin: 1.25rem 0 0; color: var(--slate); font-size: 0.95rem; max-width: 72ch;
+  }
+  .fee-note strong { color: var(--ink); }
 
   /* PROCESS */
   .steps {

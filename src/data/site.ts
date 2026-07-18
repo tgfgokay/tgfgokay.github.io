@@ -12,11 +12,11 @@ export const site = {
 
   // İletişim
   phone: '+902123206006',
-  phoneDisplay: '0212 320 6006',
+  phoneDisplay: '0212 320 6006', // NBSP: numara satır sonunda bölünmesin
   gsm: '+905418528604',
-  gsmDisplay: '0541 852 8604',
+  gsmDisplay: '0541 852 8604',
   fax: '+902123206047',
-  faxDisplay: '0212 320 6047',
+  faxDisplay: '0212 320 6047',
   email: 'gokay.gul@tgfmalimusavirlik.com',
   whatsapp: '905418528604', // wa.me formatı
   whatsappText: 'Merhaba, mali müşavirlik hizmetleriniz hakkında bilgi almak istiyorum.',
@@ -64,6 +64,7 @@ export type Service = {
   title: string;
   short: string; // ana sayfa kartı — 1 cümle
   summary: string; // detay sayfası özet
+  metaDesc: string; // meta description (≤155 karakter)
   icon: string; // basit SVG anahtarı
 };
 
@@ -72,6 +73,8 @@ export const services: Service[] = [
   {
     slug: 'sirket-kurulusu',
     title: 'Şirket Kuruluşu',
+    metaDesc:
+      'Şişli merkezli mali müşavirden İstanbul genelinde şirket kuruluşu: tür seçimi, maliyetler, tescil ve kuruluş sonrası yükümlülükler — süreci ben yürütürüm.',
     short:
       'Limited, anonim ya da şahıs — doğru şirket türüyle sıfırdan, adım adım yanınızdayım.',
     summary:
@@ -81,6 +84,8 @@ export const services: Service[] = [
   {
     slug: 'muhasebe-bordro',
     title: 'Muhasebe & Bordro',
+    metaDesc:
+      'İstanbul’da KOBİ’ler için muhasebe ve bordro: defter kaydı, SGK bildirimleri, e-belgeler. Tarihleri sizin yerinize takip ederim.',
     short:
       'Düzenli, zamanında ve hatasız muhasebe. Cezayla, gecikmeyle uğraşmayın.',
     summary:
@@ -90,6 +95,8 @@ export const services: Service[] = [
   {
     slug: 'beyanname-vergi',
     title: 'Beyanname & Vergi',
+    metaDesc:
+      'KDV, muhtasar, geçici ve yıllık beyannameler İstanbul’da mali müşavir güvencesiyle. Yasal vergi avantajlarını önceden planlarım.',
     short:
       'Beyannameleriniz zamanında; vergi avantajlarınız gözden kaçmadan.',
     summary:
@@ -99,6 +106,8 @@ export const services: Service[] = [
   {
     slug: 'tesvik-kosgeb',
     title: 'Teşvik & KOSGEB',
+    metaDesc:
+      'KOSGEB ve yatırım teşviklerinde uygunluk değerlendirmesi ve başvuru yönetimi. İstanbul’da KOBİ’ler için baştan sona destek.',
     short:
       'Hakkınız olan destekleri alın, büyümenizi devlet destekleriyle finanse edin.',
     summary:
@@ -108,6 +117,8 @@ export const services: Service[] = [
   {
     slug: 'teknopark',
     title: 'Teknopark & Ar-Ge',
+    metaDesc:
+      'Teknopark başvurusu, kazanç istisnası, stopaj teşviki ve SGK desteği: yazılım ve Ar-Ge işiniz için tüm süreci İstanbul’da ben yönetirim.',
     short:
       'Yazılım ve Ar-Ge işletmelerinin teknopark süreçlerini baştan sona yürütüyorum.',
     summary:
@@ -117,6 +128,8 @@ export const services: Service[] = [
   {
     slug: 'danismanlik',
     title: 'Danışmanlık',
+    metaDesc:
+      'Değerleme, birleşme/devir ve uluslararası vergi gibi karmaşık kararlarda İstanbul’da KOBİ’nizin yanında mali danışmanlık.',
     short:
       'Şirket değerleme, birleşme ve uluslararası vergi gibi üst düzey ihtiyaçlar.',
     summary:

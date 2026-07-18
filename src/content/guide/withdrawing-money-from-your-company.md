@@ -1,6 +1,7 @@
 ---
 title: "The Cheapest Way to Take Money Out of Your Company: Dividends or Director’s Fee?"
-description: "The company made a profit, and the partner wants to take the money home. The first instinct is a dividend — and it’s usually the most expensive way. I’ve explained why a director’s fee (huzur hakkı) is cheaper and where its limit ends, in plain language."
+seoTitle: "Dividends or Director’s Fee: The Cheaper Way Out"
+description: "Dividends are usually the most expensive way to take money out of your company. Why a director’s fee is often cheaper — and where its limit ends."
 date: 2026-07-10
 relatedService: "advisory"
 tags: ["director's fee", "dividend", "taking money from the company", "tax planning", "sme"]

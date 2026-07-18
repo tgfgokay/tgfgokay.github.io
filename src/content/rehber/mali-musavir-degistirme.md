@@ -1,6 +1,7 @@
 ---
 title: "Mali Müşavir Değiştirmek İstiyorum: Nasıl Olur, Zor mu?"
-description: "Mali müşavir değiştirmek sizin hakkınız. Defteriniz alıkonamaz, ama asıl iş kağıtta değil dijital yetki devrindedir. Devir sürecini, doğru zamanlamayı ve devri sizin için nasıl yürüttüğümü sade bir dille anlattım."
+seoTitle: "Mali Müşavir Değiştirmek Zor mu? Adım Adım Devir"
+description: "Mali müşavir değiştirmek hakkınız. Asıl iş kağıtta değil dijital yetki devrinde. Devir sürecini, zamanlamayı ve size düşenleri sade bir dille anlattım."
 date: 2026-07-10
 relatedService: "muhasebe-bordro"
 tags: ["mali müşavir değiştirme", "devir", "smmm", "kobi"]

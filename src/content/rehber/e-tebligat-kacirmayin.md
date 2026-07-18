@@ -1,6 +1,7 @@
 ---
 title: "E-Tebligatı Kaçırmak Neden Pahalıya Patlar? (Ve Bunu Nasıl Önlerim)"
-description: "Vergi dairesinin e-tebligatı, siz görmeseniz bile 5. günün sonunda tebliğ edilmiş sayılır. Süre işlemeye başlar, dava hakkı kaçar. E-tebligatın mantığını ve takibi bana bırakmanın yolunu sade bir dille anlattım."
+seoTitle: "E-Tebligatı Kaçırmak Neden Pahalıya Patlar?"
+description: "E-tebligat, görmeseniz bile 5. günün sonunda tebliğ sayılır; süreler işler, dava hakkı kaçar. Takibi mali müşavirinize bırakmanın yolunu anlattım."
 date: 2026-07-10
 relatedService: "beyanname-vergi"
 tags: ["e-tebligat", "vergi", "kobi", "ceza"]

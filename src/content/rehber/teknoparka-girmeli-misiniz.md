@@ -1,6 +1,7 @@
 ---
 title: "Yazılımcıysanız Teknoparka Girmeli misiniz? (Avantajlar ve İnce Detaylar)"
-description: "Teknopark; yazılım, Ar-Ge ve tasarım işi yapan girişimciye ciddi vergi avantajı sunuyor: kazanç istisnası, personel stopaj teşviki, SGK desteği. Ama her işe, her aşamada uymuyor. Kimlere uyar, dikkat edilecek noktalar neler — sade bir dille anlattım."
+seoTitle: "Yazılımcıysanız Teknoparka Girmeli misiniz?"
+description: "Teknopark; kazanç istisnası, stopaj teşviki ve SGK desteği sunar ama her işe uymaz. Kimlere uyar, nelere dikkat edilmeli — sade bir dille anlattım."
 date: 2026-07-10
 relatedService: "teknopark"
 tags: ["teknopark", "yazılım", "ar-ge", "teşvik", "kobi"]

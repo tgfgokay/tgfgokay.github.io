@@ -1,6 +1,7 @@
 ---
 title: "Şişli’de Şirket Nasıl Kurulur? Adım Adım Rehber"
-description: "Şişli ve İstanbul’da şirket kurmak isteyenler için adım adım süreç: şirket türü seçimi, gerekli evraklar, tescil ve kuruluş sonrası yükümlülükler. Bir mali müşavir gözünden sade anlatım."
+seoTitle: "Şişli’de Şirket Nasıl Kurulur? Adım Adım Rehber"
+description: "Şişli ve İstanbul’da şirket kurmak isteyenlere adım adım süreç: tür seçimi, evraklar, tescil ve kuruluş sonrası yükümlülükler."
 date: 2026-07-10
 relatedService: "sirket-kurulusu"
 tags: ["şirket kuruluşu", "şişli", "istanbul", "kobi"]

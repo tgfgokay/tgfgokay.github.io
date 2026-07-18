@@ -1,6 +1,7 @@
 ---
 title: "If You’re Going Into Manufacturing: Don’t Skip the Investment Incentive Certificate"
-description: "For manufacturing and production investments, an investment incentive certificate delivers serious cost advantages — from VAT on machinery purchases to social-security premiums. But the certificate must be obtained before you start investing. What it gains you and when to apply — explained plainly, from a manufacturer’s point of view."
+seoTitle: "Investment Incentive Certificate for Manufacturers"
+description: "An investment incentive certificate cuts costs from VAT on machinery to social-security premiums — but you must obtain it before investing."
 date: 2026-07-10
 relatedService: "incentives-kosgeb"
 tags: ["manufacturing", "production", "investment incentive", "incentive", "sme"]

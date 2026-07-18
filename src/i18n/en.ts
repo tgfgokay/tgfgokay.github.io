@@ -25,6 +25,8 @@ export const servicesEn: ServiceEn[] = [
     slug: 'company-formation',
     trSlug: 'sirket-kurulusu',
     title: 'Company Formation',
+    metaDesc:
+      'Company formation in Istanbul with a Şişli-based CPA: choosing the type, costs, registration and post-setup obligations — I run the whole process.',
     short:
       'Limited, joint-stock or sole proprietorship — I set you up from scratch with the right company type, step by step.',
     summary:
@@ -35,6 +37,8 @@ export const servicesEn: ServiceEn[] = [
     slug: 'accounting-payroll',
     trSlug: 'muhasebe-bordro',
     title: 'Accounting & Payroll',
+    metaDesc:
+      'Accounting and payroll for Istanbul SMEs: bookkeeping, social-security filings, e-documents. I track every deadline for you.',
     short: 'Regular, on-time and error-free accounting. No penalties, no delays to deal with.',
     summary:
       'From bookkeeping to payroll, from social-security filings to e-documents, I keep your day-to-day accounting in order and track the deadlines for you.',
@@ -44,6 +48,8 @@ export const servicesEn: ServiceEn[] = [
     slug: 'tax-returns',
     trSlug: 'beyanname-vergi',
     title: 'Tax Returns',
+    metaDesc:
+      'VAT, withholding, provisional and annual returns handled by an Istanbul CPA. I plan your lawful tax advantages in advance.',
     short: 'Your returns filed on time; your tax advantages never overlooked.',
     summary:
       'VAT, withholding, provisional and annual returns; plus I plan your lawful tax advantages in advance so you don’t pay more than you have to.',
@@ -53,6 +59,8 @@ export const servicesEn: ServiceEn[] = [
     slug: 'incentives-kosgeb',
     trSlug: 'tesvik-kosgeb',
     title: 'Incentives & KOSGEB',
+    metaDesc:
+      'KOSGEB and investment incentives: eligibility assessment and full application management for SMEs across Istanbul.',
     short: 'Claim the support you’re entitled to; finance your growth with government incentives.',
     summary:
       'I assess your eligibility for KOSGEB, investment incentives and other government support, and manage the application process from start to finish.',
@@ -62,6 +70,8 @@ export const servicesEn: ServiceEn[] = [
     slug: 'technopark-rd',
     trSlug: 'teknopark',
     title: 'Technopark & R&D',
+    metaDesc:
+      'Technopark applications, earnings exemption, withholding incentive and social-security support for your software or R&D business in Istanbul.',
     short: 'I run the technopark process end to end for software and R&D businesses.',
     summary:
       'From the technopark application to applying the exemption, from the personnel withholding incentive to social-security support, I manage the whole process — so your software and R&D business uses every advantage in full.',
@@ -71,6 +81,8 @@ export const servicesEn: ServiceEn[] = [
     slug: 'advisory',
     trSlug: 'danismanlik',
     title: 'Advisory',
+    metaDesc:
+      'Advisory for the complex decisions of a growing business: valuation, merger and transfer, international tax. Istanbul-based, SME-focused.',
     short: 'Higher-level needs such as company valuation, mergers and international tax.',
     summary:
       'For the more complex decisions you face as your business grows — valuation, merger/transfer, international tax — I stand by you.',
@@ -316,7 +328,7 @@ export const serviceDetailsEn: Record<string, ServiceDetail> = {
 export const pages = {
   home: {
     metaDescription:
-      'A financial advisor alongside SMEs across Istanbul. Company formation, accounting & payroll, tax returns, incentives & KOSGEB. My phone is always on — free initial call.',
+      'The accountant alongside SMEs across Istanbul: company formation, accounting & payroll, tax returns, incentives. My phone is always on — free first call.',
     pill: 'Istanbul-wide · Accepting new clients',
     h1pre: 'Your SME’s',
     h1grad: 'Financial Advisor',

@@ -1,6 +1,7 @@
 ---
 title: "Why Missing an E-Notification Costs You Dearly (And How I Prevent It)"
-description: "The tax office’s e-notification is deemed served at the end of the 5th day, even if you never saw it. The clock starts, and the right to appeal slips away. I’ve explained the logic of e-notification and how to leave the tracking to me, in plain language."
+seoTitle: "Why Missing an E-Notification Costs You Dearly"
+description: "An e-notification is deemed served on the 5th day even if unseen; deadlines start running. How e-notification works and how I track it for you."
 date: 2026-07-10
 relatedService: "tax-returns"
 tags: ["e-notification", "tax", "sme", "penalty"]

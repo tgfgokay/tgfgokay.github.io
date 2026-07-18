@@ -7,6 +7,8 @@ const rehber = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    // kısa SEO başlığı (≤60 karakter) — <title> etiketinde suffix'siz kullanılır
+    seoTitle: z.string().optional(),
     description: z.string(), // meta description + kart özeti
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),
@@ -22,6 +24,7 @@ const guide = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    seoTitle: z.string().optional(),
     description: z.string(),
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),

@@ -1,6 +1,7 @@
 ---
 title: "Serbest Meslekte Geçici Vergi ve Stopaj: “İki Kere mi Ödüyorum?” Değil, İşte Doğrusu"
-description: "Serbest meslek erbabının en çok karıştırdığı konu: geçici vergi, stopaj ve yıllık gelir vergisi aynı verginin farklı taksitleridir. Mekanizmayı doğru kurunca çoğu mükellef yıl sonunda iade alır. Sade bir dille anlattım."
+seoTitle: "Serbest Meslekte Geçici Vergi ve Stopaj Rehberi"
+description: "Geçici vergi, stopaj ve yıllık gelir vergisi aynı verginin taksitleridir. Mekanizma doğru kurulunca çoğu mükellef yıl sonunda iade alır."
 date: 2026-07-10
 relatedService: "beyanname-vergi"
 tags: ["serbest meslek", "geçici vergi", "stopaj", "gelir vergisi", "kobi"]

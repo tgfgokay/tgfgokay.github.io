@@ -1,6 +1,7 @@
 ---
 title: "KOBİ’ler İçin Vergi ve Beyanname Takvimi: Nasıl Takip Edilir?"
-description: "KDV, muhtasar, geçici ve yıllık beyannameler… KOBİ’lerin kaçırmaması gereken vergi takvimini ve gecikmenin sonuçlarını sade bir dille anlattım. Tarihleri takip etmek zorunda kalmamanın yolu."
+seoTitle: "KOBİ’ler İçin Vergi ve Beyanname Takvimi"
+description: "KDV, muhtasar, geçici ve yıllık beyanname… KOBİ’lerin kaçırmaması gereken vergi takvimi ve gecikmenin bedeli. Tarihleri takip etmeden yönetmenin yolu."
 date: 2026-07-10
 relatedService: "beyanname-vergi"
 tags: ["beyanname", "vergi", "kobi", "vergi takvimi"]

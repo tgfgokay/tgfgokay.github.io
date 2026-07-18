@@ -16,7 +16,7 @@ const waHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
   `Merhaba, ${service.title} hakkında bilgi almak istiyorum.`
 )}`;
 
-const description = `${service.title} — ${service.summary} İstanbul geneli, TGF Mali Müşavirlik.`;
+const description = service.metaDesc;
 
 const breadcrumb = {
   '@context': 'https://schema.org',

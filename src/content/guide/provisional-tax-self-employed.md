@@ -1,6 +1,7 @@
 ---
 title: "Provisional Tax and Withholding for the Self-Employed: Not “Am I Paying Twice?” — Here’s How It Really Works"
-description: "The thing self-employed professionals confuse most: provisional tax, withholding and annual income tax are different instalments of the same tax. Set the mechanism up right and most taxpayers get a refund at year-end. Explained in plain language."
+seoTitle: "Provisional Tax & Withholding for the Self-Employed"
+description: "Provisional tax, withholding and annual income tax are instalments of the same tax. Set it up right and most taxpayers get a year-end refund."
 date: 2026-07-10
 relatedService: "tax-returns"
 tags: ["self-employed", "provisional tax", "withholding", "income tax", "sme"]

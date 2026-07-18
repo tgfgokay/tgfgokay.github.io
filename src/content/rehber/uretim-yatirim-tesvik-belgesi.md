@@ -1,6 +1,7 @@
 ---
 title: "Üretim İşine Girecekseniz: Yatırım Teşvik Belgesini Atlamayın"
-description: "İmalat ve üretim yatırımlarında yatırım teşvik belgesi, makine alımındaki KDV’den SGK primine kadar ciddi maliyet avantajı sağlar. Ama belge, yatırıma başlamadan alınmalı. Neyi kazandırır, ne zaman başvurulur — üretici gözünden sade bir dille anlattım."
+seoTitle: "Yatırım Teşvik Belgesi: Üretime Girmeden Önce Alın"
+description: "Yatırım teşvik belgesi makine KDV’sinden SGK primine ciddi avantaj sağlar; ama yatırıma başlamadan alınmalı. Ne kazandırır, ne zaman başvurulur?"
 date: 2026-07-10
 relatedService: "tesvik-kosgeb"
 tags: ["üretim", "imalat", "yatırım teşvik", "teşvik", "kobi"]

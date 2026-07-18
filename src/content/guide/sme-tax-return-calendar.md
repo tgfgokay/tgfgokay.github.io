@@ -1,6 +1,7 @@
 ---
 title: "The Tax and Return Calendar for SMEs: How to Keep Track"
-description: "VAT, withholding, provisional and annual returns… I’ve explained, in plain language, the tax calendar SMEs mustn’t miss and the consequences of being late. The way to never have to track the dates yourself."
+seoTitle: "The Tax and Return Calendar for SMEs"
+description: "VAT, withholding, provisional and annual returns: the tax calendar SMEs must not miss, the cost of being late, and how to stop tracking dates."
 date: 2026-07-10
 relatedService: "tax-returns"
 tags: ["tax return", "tax", "sme", "tax calendar"]

@@ -1,6 +1,7 @@
 ---
 title: "Şahıs mı, Limited mi? Yeni İşletme İçin Hangisi?"
-description: "Yeni iş kuranların en çok sorduğu soru: şahıs işletmesi mi, limited şirket mi? Maliyet, sorumluluk, vergi ve büyüme açısından farkları bir mali müşavir gözünden karşılaştırdım."
+seoTitle: "Şahıs mı, Limited mi? Yeni İşletme İçin Hangisi?"
+description: "Yeni iş kuranların ilk sorusu: şahıs mı, limited mi? Maliyet, sorumluluk, vergi ve büyüme farklarını mali müşavir gözünden karşılaştırdım."
 date: 2026-07-10
 relatedService: "sirket-kurulusu"
 tags: ["şirket kuruluşu", "şahıs işletmesi", "limited şirket", "kobi"]

@@ -1,6 +1,7 @@
 ---
 title: "Şirketten Para Çekmenin En Ucuz Yolu: Kâr Payı mı, Huzur Hakkı mı?"
-description: "Şirket kâr etti, ortak parayı evine götürmek istiyor. İlk refleks kâr dağıtımı — ve çoğu zaman en pahalı yol. Huzur hakkının neden daha ucuz olduğunu ve sınırının nerede bittiğini sade bir dille anlattım."
+seoTitle: "Şirketten Para Çekmenin En Ucuz Yolu Hangisi?"
+description: "Kâr dağıtımı çoğu zaman en pahalı yoldur. Huzur hakkının neden daha ucuz olduğunu ve sınırının nerede bittiğini sade bir dille anlattım."
 date: 2026-07-10
 relatedService: "danismanlik"
 tags: ["huzur hakkı", "kâr payı", "ortağa para çekme", "vergi planlaması", "kobi"]
