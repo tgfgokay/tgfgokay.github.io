@@ -43,7 +43,7 @@ export const site = {
   hoursSchema: 'Mo,Tu,We,Th,Fr 09:00-18:00',
 
   // Dış linkler
-  portalUrl: 'https://emukellef.com.tr',
+  portalUrl: 'https://tgfmalimusavirlik.emukellef.org/emukellef/',
   linkedin: 'https://www.linkedin.com/in/gökay-gül-b7771865/',
   gokaygul: 'https://gokaygul.com',
 
