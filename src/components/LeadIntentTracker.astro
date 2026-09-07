@@ -1,0 +1,115 @@
+---
+// Bu bileşen ağ isteği yapmaz ve kişi/form verisi okumaz.
+// Yalnızca anonim edinim bağlamını ve iletişim niyetlerini dataLayer'a hazırlar.
+---
+
+<script>
+  import {
+    buildAcquisition,
+    classifyContactChannel,
+    serviceInterestFromPath,
+    topicFromIndex,
+  } from '../scripts/lead-measurement.mjs';
+
+  type Acquisition = {
+    source: string;
+    medium: string;
+    campaign: string;
+    referrer_domain: string;
+    landing_path: string;
+    landing_group: string;
+  };
+
+  declare global {
+    interface Window {
+      dataLayer?: Array<Record<string, unknown>>;
+    }
+  }
+
+  const SESSION_KEY = 'tgf_first_touch_v1';
+  const readFirstTouch = (): Acquisition => {
+    try {
+      const stored = sessionStorage.getItem(SESSION_KEY);
+      if (stored) return JSON.parse(stored) as Acquisition;
+    } catch {
+      // sessionStorage kapalıysa yalnızca mevcut sayfa bağlamını kullan.
+    }
+
+    const acquisition = buildAcquisition({
+      queryString: location.search,
+      referrer: document.referrer,
+      landingPath: location.pathname,
+    });
+
+    try {
+      sessionStorage.setItem(SESSION_KEY, JSON.stringify(acquisition));
+    } catch {
+      // Ölçüm, depolama desteğine bağlı olmamalı.
+    }
+    return acquisition;
+  };
+
+  const acquisition = readFirstTouch();
+
+  const locationLabel = (element: Element) => {
+    if (element.closest('.wa-fab')) return 'floating_whatsapp';
+    if (element.closest('header')) return 'header';
+    if (element.closest('footer')) return 'footer';
+    if (element.closest('form[name="iletisim"]')) return 'contact_form';
+    const section = element.closest('section');
+    if (!section) return 'unknown';
+    if (section.id) return section.id;
+    const firstClass = Array.from(section.classList).find((name) => name !== 'section');
+    return firstClass ?? 'content';
+  };
+
+  const emit = (eventName: string, parameters: Record<string, unknown>) => {
+    const payload = {
+      event: eventName,
+      page_path: location.pathname,
+      page_language: document.documentElement.lang || 'tr',
+      ...acquisition,
+      ...parameters,
+    };
+
+    window.dataLayer = window.dataLayer ?? [];
+    window.dataLayer.push(payload);
+    window.dispatchEvent(new CustomEvent('tgf:measurement', { detail: payload }));
+
+    // Onaylı bir GA4/GTM kurulumu bu yerel olay sözleşmesini ayrıca dinleyebilir.
+  };
+
+  document.addEventListener(
+    'click',
+    (event) => {
+      if (!(event.target instanceof Element)) return;
+      const link = event.target.closest('a[href]');
+      if (!(link instanceof HTMLAnchorElement)) return;
+      const href = link.getAttribute('href') ?? '';
+      const channel = classifyContactChannel(href);
+      if (!channel) return;
+
+      emit('contact_intent', {
+        contact_channel: channel,
+        cta_location: locationLabel(link),
+        service_interest: serviceInterestFromPath(location.pathname),
+      });
+    },
+    { capture: true },
+  );
+
+  document.addEventListener(
+    'submit',
+    (event) => {
+      const form = event.target;
+      if (!(form instanceof HTMLFormElement) || form.name !== 'iletisim') return;
+      const subject = form.querySelector<HTMLSelectElement>('select[name="konu"]');
+      emit('lead_form_submit', {
+        contact_channel: 'form_to_whatsapp',
+        cta_location: locationLabel(form),
+        service_interest: topicFromIndex(subject?.selectedIndex ?? -1),
+      });
+    },
+    { capture: true },
+  );
+</script>
