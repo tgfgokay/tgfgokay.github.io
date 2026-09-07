@@ -10,6 +10,9 @@ const L = ui[lang];
 const r = routes[lang];
 const svcList = lang === 'en' ? servicesEn : services;
 const year = new Date().getFullYear();
+const privacyPath = lang === 'tr' ? '/cerez-ve-gizlilik/' : '/en/cookie-and-privacy/';
+const privacyLabel = lang === 'tr' ? 'Çerez ve gizlilik' : 'Cookie and privacy';
+const preferencesLabel = lang === 'tr' ? 'Çerez tercihleri' : 'Cookie preferences';
 ---
 
 <footer class="site-footer">
@@ -51,7 +54,11 @@ const year = new Date().getFullYear();
     <p>
       {L.legalLine({ taxOffice: site.taxOffice, vkn: site.vkn, chamber: site.chamber })}
     </p>
-    <p>© {year} {site.name}. {L.rights}</p>
+    <p class="legal-links">
+      <a href={privacyPath}>{privacyLabel}</a>
+      <button type="button" data-consent-open>{preferencesLabel}</button>
+      <span>© {year} {site.name}. {L.rights}</span>
+    </p>
   </div>
 </footer>
 
@@ -106,6 +113,18 @@ const year = new Date().getFullYear();
     color: #8b91a7;
   }
   .legal p { margin: 0; }
+  .legal-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .legal-links a,
+  .legal-links button {
+    color: #c7ccdb;
+    font: inherit;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+  .legal-links a:hover,
+  .legal-links button:hover { color: var(--white); text-decoration: underline; }
   @media (max-width: 800px) {
     .cols { grid-template-columns: 1fr; gap: 2rem; }
   }

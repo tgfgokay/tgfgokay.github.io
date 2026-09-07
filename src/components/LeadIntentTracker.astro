@@ -1,6 +1,6 @@
 ---
 // Bu bileşen ağ isteği yapmaz ve kişi/form verisi okumaz.
-// Yalnızca anonim edinim bağlamını ve iletişim niyetlerini dataLayer'a hazırlar.
+// Yalnızca anonim edinim bağlamını ve iletişim niyetlerini TGF'nin yerel kuyruğuna hazırlar.
 ---
 
 <script>
@@ -22,7 +22,7 @@
 
   declare global {
     interface Window {
-      dataLayer?: Array<Record<string, unknown>>;
+      tgfMeasurementQueue?: Array<Record<string, unknown>>;
     }
   }
 
@@ -72,8 +72,8 @@
       ...parameters,
     };
 
-    window.dataLayer = window.dataLayer ?? [];
-    window.dataLayer.push(payload);
+    window.tgfMeasurementQueue = window.tgfMeasurementQueue ?? [];
+    window.tgfMeasurementQueue.push(payload);
     window.dispatchEvent(new CustomEvent('tgf:measurement', { detail: payload }));
 
     // Onaylı bir GA4/GTM kurulumu bu yerel olay sözleşmesini ayrıca dinleyebilir.

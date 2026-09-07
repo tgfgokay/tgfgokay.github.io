@@ -14,6 +14,7 @@ const staticPairs: Pair[] = [
   { tr: '/rehber/', en: '/en/guide/' },
   { tr: '/hakkimizda/', en: '/en/about/' },
   { tr: '/iletisim/', en: '/en/contact/' },
+  { tr: '/cerez-ve-gizlilik/', en: '/en/cookie-and-privacy/' },
 ];
 
 const trToEn = Object.fromEntries(servicesEn.map((s) => [s.trSlug, s.slug]));

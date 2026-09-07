@@ -1,0 +1,177 @@
+---
+import type { Lang } from '../i18n/ui';
+
+interface Props { lang?: Lang }
+const { lang = 'tr' } = Astro.props;
+const measurementId = 'G-MRYJDNND4N';
+const copy = lang === 'tr'
+  ? {
+      title: 'Analitik çerez tercihi',
+      text: 'Siteyi geliştirmek için yalnız anonim kullanım ve iletişim niyeti ölçümü yapmak istiyoruz. Kabul etmeden Google Analytics yüklenmez.',
+      accept: 'Analitiğe izin ver',
+      reject: 'Reddet',
+      details: 'Çerez ve gizlilik bilgisi',
+      detailsPath: '/cerez-ve-gizlilik/',
+    }
+  : {
+      title: 'Analytics cookie choice',
+      text: 'We would like to measure anonymous usage and contact intent to improve the site. Google Analytics does not load until you accept.',
+      accept: 'Allow analytics',
+      reject: 'Reject',
+      details: 'Cookie and privacy information',
+      detailsPath: '/en/cookie-and-privacy/',
+    };
+---
+
+<aside
+  class="consent-banner"
+  data-consent-root
+  data-measurement-id={measurementId}
+  aria-labelledby="consent-title"
+  hidden
+>
+  <div class="consent-copy">
+    <strong id="consent-title">{copy.title}</strong>
+    <p>{copy.text} <a href={copy.detailsPath}>{copy.details}</a>.</p>
+  </div>
+  <div class="consent-actions">
+    <button type="button" class="btn btn-ghost" data-consent-reject>{copy.reject}</button>
+    <button type="button" class="btn btn-primary" data-consent-accept>{copy.accept}</button>
+  </div>
+</aside>
+
+<script>
+  import {
+    CONSENT_DENIED,
+    CONSENT_GRANTED,
+    CONSENT_KEY,
+    analyticsMayLoad,
+    buildPageContext,
+    sanitizeAnalyticsEvent,
+  } from '../scripts/analytics-consent.mjs';
+
+  declare global {
+    interface Window { dataLayer?: Array<unknown> }
+  }
+
+  const root = document.querySelector<HTMLElement>('[data-consent-root]');
+  const measurementId = root?.dataset.measurementId ?? '';
+  let analyticsAllowed = false;
+
+  const readChoice = () => {
+    try { return localStorage.getItem(CONSENT_KEY); } catch { return null; }
+  };
+
+  const saveChoice = (choice: string) => {
+    try { localStorage.setItem(CONSENT_KEY, choice); } catch { /* tercih yalnız bu sayfa için geçerli kalır */ }
+  };
+
+  const queue = (...args: unknown[]) => {
+    window.dataLayer = window.dataLayer ?? [];
+    window.dataLayer.push(args);
+  };
+
+  const consentState = (analytics: 'granted' | 'denied') => ({
+    analytics_storage: analytics,
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+  });
+
+  const loadAnalytics = () => {
+    if (!measurementId || analyticsAllowed || location.hostname !== 'tgfmalimusavirlik.com') return;
+    analyticsAllowed = true;
+
+    // Ön-onay yerel olayları Google kuyruğuna taşınmaz veya sonradan tekrar oynatılmaz.
+    window.dataLayer = [];
+    queue('consent', 'default', consentState('denied'));
+    queue('consent', 'update', consentState('granted'));
+    queue('js', new Date());
+    queue('config', measurementId, {
+      ...buildPageContext({ href: location.href, referrer: document.referrer, title: document.title }),
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+      ads_data_redaction: true,
+      cookie_expires: 15552000,
+      send_page_view: true,
+    });
+
+    if (!document.querySelector('script[data-tgf-google-tag]')) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.dataset.tgfGoogleTag = 'true';
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
+      document.head.append(script);
+    }
+  };
+
+  const removeAnalyticsCookies = () => {
+    for (const cookie of document.cookie.split(';')) {
+      const name = cookie.split('=', 1)[0]?.trim();
+      if (!name?.startsWith('_ga')) continue;
+      document.cookie = `${name}=; Max-Age=0; Path=/; SameSite=Lax`;
+    }
+  };
+
+  const hideBanner = () => { if (root) root.hidden = true; };
+  const showBanner = () => { if (root) root.hidden = false; };
+
+  root?.querySelector<HTMLElement>('[data-consent-accept]')?.addEventListener('click', () => {
+    saveChoice(CONSENT_GRANTED);
+    hideBanner();
+    loadAnalytics();
+  });
+
+  root?.querySelector<HTMLElement>('[data-consent-reject]')?.addEventListener('click', () => {
+    saveChoice(CONSENT_DENIED);
+    const wasAllowed = analyticsAllowed;
+    analyticsAllowed = false;
+    if (wasAllowed) queue('consent', 'update', consentState('denied'));
+    removeAnalyticsCookies();
+    hideBanner();
+  });
+
+  document.querySelectorAll<HTMLElement>('[data-consent-open]').forEach((button) => {
+    button.addEventListener('click', showBanner);
+  });
+
+  window.addEventListener('tgf:measurement', (event) => {
+    if (!analyticsAllowed || !(event instanceof CustomEvent)) return;
+    const sanitized = sanitizeAnalyticsEvent(event.detail);
+    if (sanitized) queue('event', sanitized.eventName, sanitized.parameters);
+  });
+
+  const initialChoice = readChoice();
+  if (analyticsMayLoad(initialChoice)) loadAnalytics();
+  else if (initialChoice !== CONSENT_DENIED) showBanner();
+</script>
+
+<style>
+  .consent-banner {
+    position: fixed;
+    z-index: 1000;
+    inset: auto 1rem 1rem;
+    max-width: 920px;
+    margin-inline: auto;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+  .consent-banner[hidden] { display: none; }
+  .consent-copy { max-width: 62ch; }
+  .consent-copy strong { display: block; margin-bottom: 0.25rem; }
+  .consent-copy p { color: var(--slate); font-size: 0.9rem; margin: 0; }
+  .consent-actions { display: flex; gap: 0.65rem; flex: none; }
+  .consent-actions .btn { padding: 0.7rem 1rem; font-size: 0.88rem; }
+  @media (max-width: 720px) {
+    .consent-banner { align-items: stretch; flex-direction: column; }
+    .consent-actions { display: grid; grid-template-columns: 1fr 1fr; }
+    .consent-actions .btn { justify-content: center; }
+  }
+</style>

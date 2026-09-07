@@ -21,12 +21,12 @@ Yayın sonrası doğrulama:
 
 ## Paket B — PII'siz ölçüm
 
-Durum: **DOĞRULANDI — yerel `dataLayer` kuyruğu yayımlandı, harici analytics bağlantısı yok.** Commit `59a38b4`; GitHub Pages koşusu `34110197558` başarıyla tamamlandı.
+Durum: **DOĞRULANDI — TGF'ye özgü yerel olay kuyruğu yayımlandı.** İlk paket commit'i `59a38b4`; GitHub Pages koşusu `34110197558` başarıyla tamamlandı. GA4 temel onay bağlantısının yayın adayı ayrıca hazırlanmıştır.
 
 Önkoşullar:
 
-- [ ] Kullanılacak GA4/GTM mülkü ve veri akışı Gökay tarafından onaylanmış.
-- [ ] KVKK/aydınlatma ve gerekiyorsa onay yaklaşımı değerlendirilmiş.
+- [x] Kullanılacak GA4 mülkü ve veri akışı Gökay tarafından onaylanmış (`G-MRYJDNND4N`).
+- [x] KVKK çerez rehberi ve Google temel onay yaklaşımı değerlendirilmiş; kabul öncesi Google etiketi engellenmiş.
 - [ ] Veri saklama süresi ve erişim yetkileri belirlenmiş.
 - [x] Paket A canlıda doğrulanmış.
 - [x] Ölçüm paketi ayrı bir commit/sürüm olarak hazırlanmış.

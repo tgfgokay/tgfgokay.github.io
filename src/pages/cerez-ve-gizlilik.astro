@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+
+const description = 'TGF Mali Müşavirlik çerez ve gizlilik bilgisi: kullanılan depolama, analitik onayı, ölçüm kapsamı ve tercih yönetimi.';
+---
+
+<Base title="Çerez ve Gizlilik" description={description} path="/cerez-ve-gizlilik/" altPath="/en/cookie-and-privacy/">
+  <section class="policy section">
+    <div class="container policy-inner">
+      <nav class="crumb" aria-label="breadcrumb"><a href="/">Ana Sayfa</a> <span>/</span> Çerez ve Gizlilik</nav>
+      <h1>Çerez ve gizlilik bilgisi</h1>
+      <p class="lede">Bu sayfa, TGF web sitesindeki analitik ölçümün hangi koşulda çalıştığını ve tercihinizi nasıl yönetebileceğinizi açıklar.</p>
+
+      <h2>Veri sorumlusu ve iletişim</h2>
+      <p>{site.legalName}, {site.address.full}. Gizlilik talepleri için <a href={`mailto:${site.email}`}>{site.email}</a> adresini kullanabilirsiniz.</p>
+
+      <h2>Zorunlu tercih kaydı</h2>
+      <p>Analitik tercihiniz, tarayıcınızdaki <code>tgf_analytics_consent_v1</code> yerel depolama kaydında tutulur. Bu kayıt yalnız seçiminizi hatırlamak içindir ve üçüncü tarafa gönderilmez.</p>
+
+      <h2>Google Analytics</h2>
+      <p>Google Analytics 4 yalnız “Analitiğe izin ver” seçeneğini kabul ettikten sonra yüklenir. Kabul öncesinde Google etiketi yüklenmez ve Google’a analitik veri gönderilmez. Reklam depolaması, reklam kullanıcı verisi, reklam kişiselleştirme ve Google Signals kapalıdır.</p>
+      <p>Onay verirseniz sayfa yolu, sayfa başlığı, yalnız alan adına indirgenmiş yönlendiren kaynak, temizlenmiş kampanya kategorileri ve telefon/e-posta/WhatsApp gibi iletişim kanalına yönelik anonim niyet olayı ölçülebilir. Formdaki ad, telefon, e-posta veya mesaj içeriği analitik olaylara eklenmez.</p>
+      <p>Google Analytics standart bağlantı ve cihaz bilgilerini kendi hizmet koşulları kapsamında işleyebilir. Analitik çerezlerin azami süresi site yapılandırmasında 180 günle sınırlandırılmıştır.</p>
+
+      <h2>Tercihinizi değiştirme</h2>
+      <p>Onayı vermek zorunda değilsiniz; reddetmeniz sitenin iletişim ve içerik işlevlerini etkilemez. Aşağıdaki düğme veya sayfa altındaki “Çerez tercihleri” bağlantısıyla seçiminizi yeniden açabilirsiniz.</p>
+      <button type="button" class="btn btn-ghost" data-consent-open>Çerez tercihini değiştir</button>
+
+      <h2>Dış bağlantılar ve iletişim kanalları</h2>
+      <p>WhatsApp, telefon, e-posta, harita ve mükellef portalı bağlantıları seçildiğinde ilgili üçüncü taraf hizmete geçilir; bu hizmetlerin kendi gizlilik koşulları geçerlidir.</p>
+
+      <p class="policy-note">Son güncelleme: 7 Eylül 2026. Bu metin teknik uygulamayı açıklar; özel bir hukuki görüş yerine geçmez.</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .policy-inner { max-width: 820px; }
+  .crumb { font-size: 0.88rem; color: var(--slate); margin-bottom: 1rem; }
+  .crumb a { color: var(--slate); }
+  .crumb span { margin: 0 0.4rem; }
+  .policy h2 { margin-top: 2.25rem; font-size: 1.35rem; }
+  .policy p, .policy li { color: #394056; }
+  .policy code { font-size: 0.9em; overflow-wrap: anywhere; }
+  .policy-note { margin-top: 2.5rem; font-size: 0.88rem; color: var(--slate) !important; }
+</style>

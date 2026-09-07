@@ -14,14 +14,14 @@ Bu klasör TGF'nin gokaygul.com'dan bağımsız ticari çekiş kaydını tutar. 
 
 ## Ölçüm sözleşmesi
 
-Site içindeki `LeadIntentTracker.astro` bugün ağ isteği yapmaz. Aşağıdaki anonim olayları tarayıcıdaki yerel `dataLayer` kuyruğuna hazırlar:
+Site içindeki `LeadIntentTracker.astro` kendi başına ağ isteği yapmaz. Aşağıdaki anonim olayları tarayıcıdaki TGF'ye özgü yerel `tgfMeasurementQueue` kuyruğuna hazırlar:
 
 - `contact_intent`: telefon, e-posta veya WhatsApp bağlantısı tıklaması.
 - `lead_form_submit`: formun WhatsApp'a yönlendirilmeden hemen önce tamamlanması.
 
 Olay alanları yalnızca sayfa yolu, dil, CTA konumu, kanal, hizmet kategorisi, UTM kaynak/medium/kampanya için temizlenmiş kısa token, yönlendiren alan adı, ilk açılış yolu ve kontrollü açılış grubudur. E-posta/telefon biçimine benzeyen UTM değerleri reddedilir; ad, telefon ve mesaj okunmaz.
 
-GA4/GTM veya başka bir veri gönderimi eklenmeden önce ölçüm kimliği, onay/aydınlatma yaklaşımı ve yayın için Gökay onayı gerekir.
+GA4 mülkü ve web akışı 7 Eylül 2026'da Gökay'ın açık onayıyla oluşturuldu. Google etiketi yalnız analitik onayı sonrasında yüklenir; ön-onay yerel olayları aktarılmaz. Reklam sinyalleri ve geliştirilmiş ölçüm kapalıdır. Form alanlarındaki ad, telefon ve mesaj okunmaz veya GA4 olaylarına eklenmez.
 
 ## Mesleki tanıtım uyum kapısı
 

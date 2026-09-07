@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsappFab from '../components/WhatsappFab.astro';
 import LeadIntentTracker from '../components/LeadIntentTracker.astro';
+import ConsentAnalytics from '../components/ConsentAnalytics.astro';
 import { site } from '../data/site';
 import { ui, type Lang } from '../i18n/ui';
 
@@ -134,5 +135,6 @@ const schemas = [businessSchema, ...jsonLd];
     <Footer lang={lang} />
     <WhatsappFab lang={lang} />
     <LeadIntentTracker />
+    <ConsentAnalytics lang={lang} />
   </body>
 </html>

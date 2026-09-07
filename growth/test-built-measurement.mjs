@@ -35,22 +35,29 @@ for (const marker of [
   'landing_group',
   'service_interest',
   'tgf:measurement',
+  'tgfMeasurementQueue',
 ]) {
   assert.ok(bundleText.includes(marker), `Derlenmiş ölçüm paketinde ${marker} bulunamadı.`);
 }
 
-for (const forbidden of [
-  'googletagmanager.com',
-  'google-analytics.com',
-  'gtag/js',
-  "window.gtag('event'",
-  'window.gtag("event"',
-]) {
-  assert.ok(!bundleText.includes(forbidden), `Derlenmiş ölçüm paketi dış gönderim işareti içeriyor: ${forbidden}`);
-}
-
 const htmlFiles = walk(distRoot).filter((path) => path.endsWith('.html'));
 const measurementBundleName = basename(measurementBundle);
+const consentBundles = scriptFiles.filter((path) =>
+  readFileSync(path, 'utf8').includes('tgf_analytics_consent_v1'),
+);
+assert.equal(consentBundles.length, 1, 'Derlenmiş çıktıda tek bir analitik onay paketi bulunmalı.');
+const consentBundle = consentBundles[0];
+const consentBundleName = basename(consentBundle);
+const consentText = readFileSync(consentBundle, 'utf8');
+for (const marker of [
+  'googletagmanager.com/gtag/js',
+  'analytics_storage',
+  'ad_personalization',
+  'tgf_analytics_consent_v1',
+  'tgfmalimusavirlik.com',
+]) {
+  assert.ok(consentText.includes(marker), `Analitik onay paketinde ${marker} bulunamadı.`);
+}
 const importsByBundle = new Map(
   scriptFiles.map((path) => {
     const imports = Array.from(readFileSync(path, 'utf8').matchAll(/["']\.\/([^"']+\.js)["']/g))
@@ -59,18 +66,20 @@ const importsByBundle = new Map(
   }),
 );
 
-const reachesMeasurementBundle = (entryBundles) => {
+const reachesBundle = (entryBundles, targetBundle) => {
   const queue = [...entryBundles];
   const visited = new Set();
   while (queue.length) {
     const bundle = queue.shift();
     if (!bundle || visited.has(bundle)) continue;
-    if (bundle === measurementBundleName) return true;
+    if (bundle === targetBundle) return true;
     visited.add(bundle);
     queue.push(...(importsByBundle.get(bundle) ?? []));
   }
   return false;
 };
+
+const reachesMeasurementBundle = (entryBundles) => reachesBundle(entryBundles, measurementBundleName);
 
 const missingBundle = htmlFiles.filter((path) => {
   const html = readFileSync(path, 'utf8');
@@ -79,12 +88,31 @@ const missingBundle = htmlFiles.filter((path) => {
   return !reachesMeasurementBundle(entryBundles);
 });
 
+const missingConsentBundle = htmlFiles.filter((path) => {
+  const html = readFileSync(path, 'utf8');
+  const entryBundles = Array.from(html.matchAll(/src="\/_astro\/([^"]+\.js)"/g))
+    .map((match) => match[1]);
+  return !reachesMeasurementBundle(entryBundles)
+    || !(entryBundles.includes(consentBundleName)
+      || reachesBundle(entryBundles, consentBundleName));
+});
+
+const directGoogleTag = htmlFiles.filter((path) =>
+  /<script[^>]+src="https:\/\/www\.googletagmanager\.com\/gtag\/js/.test(readFileSync(path, 'utf8')),
+);
+
+const missingMeasurementId = htmlFiles.filter((path) =>
+  !readFileSync(path, 'utf8').includes('data-measurement-id="G-MRYJDNND4N"'),
+);
+
 assert.deepEqual(
   missingBundle,
   [],
   'Bazı HTML sayfaları anonim ölçüm paketini yüklemiyor.',
 );
 
-console.log(
-  `BUILD-MEASUREMENT: ${htmlFiles.length} HTML sayfası anonim paketi yüklüyor; harici analytics gönderimi yok.`,
-);
+assert.deepEqual(missingConsentBundle, [], 'Bazı HTML sayfaları analitik onay paketini yüklemiyor.');
+assert.deepEqual(directGoogleTag, [], 'Google etiketi kullanıcı onayından önce doğrudan HTML içinde yüklenmemeli.');
+assert.deepEqual(missingMeasurementId, [], 'Bazı HTML sayfalarında onay yükleyicisinin ölçüm kimliği eksik.');
+
+console.log(`BUILD-MEASUREMENT: ${htmlFiles.length} HTML sayfası PII'siz ölçümü ve temel onay yükleyicisini içeriyor; Google etiketi HTML'de doğrudan yüklenmiyor.`);

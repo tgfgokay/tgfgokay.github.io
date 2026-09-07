@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site } from '../../data/site';
+
+const description = 'TGF Mali Müşavirlik cookie and privacy information: storage, analytics consent, measurement scope and preference management.';
+---
+
+<Base title="Cookie and Privacy" description={description} path="/en/cookie-and-privacy/" lang="en" altPath="/cerez-ve-gizlilik/">
+  <section class="policy section">
+    <div class="container policy-inner">
+      <nav class="crumb" aria-label="breadcrumb"><a href="/en/">Home</a> <span>/</span> Cookie and Privacy</nav>
+      <h1>Cookie and privacy information</h1>
+      <p class="lede">This page explains when analytics measurement runs on the TGF website and how you can manage your choice.</p>
+
+      <h2>Data controller and contact</h2>
+      <p>{site.legalName}, {site.address.full}. You can send privacy requests to <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+
+      <h2>Essential preference record</h2>
+      <p>Your analytics choice is stored in the <code>tgf_analytics_consent_v1</code> local-storage record in your browser. It is used only to remember your choice and is not sent to a third party.</p>
+
+      <h2>Google Analytics</h2>
+      <p>Google Analytics 4 loads only after you select “Allow analytics”. Before acceptance, the Google tag does not load and no analytics data is sent to Google. Advertising storage, advertising user data, advertising personalisation and Google Signals are disabled.</p>
+      <p>If you consent, the site may measure the page path and title, referrer reduced to its domain, sanitised campaign categories, and anonymous contact-intent events such as phone, email or WhatsApp channel selection. The name, phone number, email address and message entered in the form are not added to analytics events.</p>
+      <p>Google Analytics may process standard connection and device information under its own service terms. The maximum analytics-cookie lifetime configured by this site is 180 days.</p>
+
+      <h2>Changing your choice</h2>
+      <p>Consent is optional; rejecting analytics does not affect the site’s content or contact functions. Use the button below or “Cookie preferences” in the footer to reopen your choice.</p>
+      <button type="button" class="btn btn-ghost" data-consent-open>Change cookie preference</button>
+
+      <h2>External links and contact channels</h2>
+      <p>Choosing WhatsApp, phone, email, maps or the client portal takes you to the relevant third-party service, whose own privacy terms apply.</p>
+
+      <p class="policy-note">Last updated: 7 September 2026. This text describes the technical implementation and is not a substitute for tailored legal advice.</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .policy-inner { max-width: 820px; }
+  .crumb { font-size: 0.88rem; color: var(--slate); margin-bottom: 1rem; }
+  .crumb a { color: var(--slate); }
+  .crumb span { margin: 0 0.4rem; }
+  .policy h2 { margin-top: 2.25rem; font-size: 1.35rem; }
+  .policy p, .policy li { color: #394056; }
+  .policy code { font-size: 0.9em; overflow-wrap: anywhere; }
+  .policy-note { margin-top: 2.5rem; font-size: 0.88rem; color: var(--slate) !important; }
+</style>
