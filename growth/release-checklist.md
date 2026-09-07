@@ -4,28 +4,32 @@ Bu belge yayın yetkisi vermez. Her harici adım için Gökay'ın açık onayı 
 
 ## Paket A — nötr tanıtım metinleri
 
+Durum: **DOĞRULANDI — yayımlandı.** Commit `2f9b871`; GitHub Pages koşusu `34110030016` başarıyla tamamlandı.
+
 Önkoşullar:
 
 - [ ] Oda/TÜRMOB açısından kullanılacak metin yaklaşımı değerlendirilmiş.
-- [ ] Türkçe ve İngilizce sayfalar birlikte gözden geçirilmiş.
-- [ ] `npm run growth:audit` geçmiş.
-- [ ] `npm run growth:verify` geçmiş.
+- [x] Türkçe ve İngilizce sayfalar birlikte gözden geçirilmiş.
+- [x] `npm run growth:audit` geçmiş.
+- [x] `npm run growth:verify` geçmiş.
 
 Yayın sonrası doğrulama:
 
-- [ ] Ana sayfa, hizmetler, hizmet detayları, rehber ve İngilizce karşılıkları açılıyor.
-- [ ] “Ücretsiz hizmet”, sonuç garantisi veya karşılaştırmalı üstünlük çağrışımı yapan belirlenmiş kalıplar canlı HTML'de yok.
-- [ ] Sitemap ve canonical adresleri değişmemiş.
+- [x] Ana sayfa, hizmetler, hizmet detayları, rehber ve İngilizce karşılıkları açılıyor.
+- [x] “Ücretsiz hizmet”, sonuç garantisi veya karşılaştırmalı üstünlük çağrışımı yapan belirlenmiş kalıplar canlı HTML'de yok.
+- [x] Sitemap ve canonical adresleri değişmemiş.
 
 ## Paket B — PII'siz ölçüm
+
+Durum: **DOĞRULANDI — yerel `dataLayer` kuyruğu yayımlandı, harici analytics bağlantısı yok.** Commit `59a38b4`; GitHub Pages koşusu `34110197558` başarıyla tamamlandı.
 
 Önkoşullar:
 
 - [ ] Kullanılacak GA4/GTM mülkü ve veri akışı Gökay tarafından onaylanmış.
 - [ ] KVKK/aydınlatma ve gerekiyorsa onay yaklaşımı değerlendirilmiş.
 - [ ] Veri saklama süresi ve erişim yetkileri belirlenmiş.
-- [ ] Paket A canlıda doğrulanmış.
-- [ ] Ölçüm paketi ayrı bir commit/sürüm olarak hazırlanmış.
+- [x] Paket A canlıda doğrulanmış.
+- [x] Ölçüm paketi ayrı bir commit/sürüm olarak hazırlanmış.
 
 Canlı doğrulama:
 
