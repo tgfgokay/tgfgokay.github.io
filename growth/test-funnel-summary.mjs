@@ -10,7 +10,7 @@ assert.deepEqual(summary, {
   source_known: 0,
   channel_known: 1,
   service_known: 1,
-  response_known: 0,
+  response_known: 1,
   qualified: 0,
   qualification_unknown: 2,
   meeting_reached: 0,
