@@ -1,7 +1,7 @@
 ---
 title: "How to Set Up a Company in Şişli: A Step-by-Step Guide"
 seoTitle: "How to Set Up a Company in Şişli: Step-by-Step"
-description: "A step-by-step guide to starting a company in Şişli or Istanbul with 2026 figures: choosing the type, minimum capital, documents, registration and post-formation obligations."
+description: "A practical 2026 guide to forming a company in Şişli or Istanbul: company type, minimum capital, documents, registration and post-formation duties."
 date: 2026-07-18
 relatedService: "company-formation"
 tags: ["company formation", "sisli", "istanbul", "sme", "minimum capital"]
@@ -77,6 +77,6 @@ If the documents are ready, a **sole proprietorship is usually set up in 1–2 d
 
 ---
 
-I run company formation across Şişli and Istanbul from start to finish. If you'd like to talk through the business idea you have in mind, I'm just a phone call away for a [free initial call](/en/contact/). For process details, take a look at the [Company Formation service page](/en/services/company-formation/).
+I run company formation across Şişli and Istanbul from start to finish. If you'd like to talk through the business idea you have in mind, I'm just a phone call away for a [scope discussion](/en/contact/). For process details, take a look at the [Company Formation service page](/en/services/company-formation/).
 
 > Note: The amounts in this article are based on legislation in force as of July 2026 (minimum capital — Presidential Decree No. 7887, Official Gazette of 25 Nov 2023; corporate tax 25% — Corporate Tax Law art. 32; young entrepreneur exemption TRY 400,000 — Income Tax Law repeated art. 20 and the 2026 schedule). Amounts can change; get in touch with me for the current position.

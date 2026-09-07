@@ -87,7 +87,7 @@ export const services: Service[] = [
     metaDesc:
       'İstanbul’da KOBİ’ler için muhasebe ve bordro: defter kaydı, SGK bildirimleri, e-belgeler. Tarihleri sizin yerinize takip ederim.',
     short:
-      'Düzenli, zamanında ve hatasız muhasebe. Cezayla, gecikmeyle uğraşmayın.',
+      'Muhasebe kayıtları, bordro ve bildirim süreçlerinin düzenli takibi.',
     summary:
       'Defter kaydından bordroya, SGK bildirimlerinden e-belgelere kadar günlük muhasebenizi düzenli tutar, tarihleri sizin yerinize takip ederim.',
     icon: 'ledger',
@@ -96,11 +96,11 @@ export const services: Service[] = [
     slug: 'beyanname-vergi',
     title: 'Beyanname & Vergi',
     metaDesc:
-      'KDV, muhtasar, geçici ve yıllık beyannameler İstanbul’da mali müşavir güvencesiyle. Yasal vergi avantajlarını önceden planlarım.',
+      'KDV, muhtasar, geçici ve yıllık beyannameler ile uygulanabilir istisna ve indirimlerin mevzuat kapsamında değerlendirilmesi.',
     short:
-      'Beyannameleriniz zamanında; vergi avantajlarınız gözden kaçmadan.',
+      'Beyanname, ödeme takvimi ve uygulanabilir vergi düzenlemelerinin dönemsel takibi.',
     summary:
-      'KDV, muhtasar, geçici ve yıllık beyannameler; üstüne yasal vergi avantajlarını önceden planlayarak gereğinden fazla ödemenizi önlerim.',
+      'KDV, muhtasar, geçici ve yıllık beyannameler ile uygulanabilir istisna ve indirimleri mevzuat kapsamında değerlendiririm.',
     icon: 'receipt',
   },
   {
@@ -109,7 +109,7 @@ export const services: Service[] = [
     metaDesc:
       'KOSGEB ve yatırım teşviklerinde uygunluk değerlendirmesi ve başvuru yönetimi. İstanbul’da KOBİ’ler için baştan sona destek.',
     short:
-      'Hakkınız olan destekleri alın, büyümenizi devlet destekleriyle finanse edin.',
+      'KOSGEB ve yatırım teşviklerinde uygunluk, başvuru ve raporlama süreçleri.',
     summary:
       'KOSGEB, yatırım teşvikleri ve diğer devlet desteklerinde uygunluğunuzu değerlendirir, başvuru sürecini baştan sona yönetirim.',
     icon: 'growth',
@@ -122,7 +122,7 @@ export const services: Service[] = [
     short:
       'Yazılım ve Ar-Ge işletmelerinin teknopark süreçlerini baştan sona yürütüyorum.',
     summary:
-      'Teknopark başvurusundan istisna uygulamasına, personel stopaj teşvikinden SGK desteğine kadar tüm süreci ben yönetirim. Yazılım ve Ar-Ge işinizin avantajlarını eksiksiz kullanmanızı sağlarım.',
+      'Teknopark başvurusu, istisna kapsamı, personel stopaj teşviki ve SGK desteğine ilişkin süreçleri mevzuat çerçevesinde takip ederim.',
     icon: 'spark',
   },
   {
@@ -141,8 +141,8 @@ export const services: Service[] = [
 // Süreç adımları — ana sayfa "nasıl çalışıyoruz"
 export const processSteps = [
   {
-    title: 'Ücretsiz ön görüşme',
-    text: 'Telefon ya da WhatsApp’tan durumunuzu dinliyorum. Bağlayıcı değil, ücretsiz.',
+    title: 'İhtiyaç ve kapsam görüşmesi',
+    text: 'Telefon ya da WhatsApp üzerinden mevcut durum ve hizmet kapsamı değerlendirilir.',
   },
   {
     title: 'İhtiyaç analizi',
@@ -165,8 +165,8 @@ export const whyPoints = [
     text: 'Telefonu açan, WhatsApp’tan dönen bir mali müşavir. Sorunuz cevapsız kalmaz.',
   },
   {
-    title: 'Sizi korur, uyarırım',
-    text: 'Ceza yemeden önce haber veririm; avantajı gözden kaçırmam.',
+    title: 'Önceden bilgilendiririm',
+    text: 'Yaklaşan yükümlülükleri bildirir, uygulanabilir düzenlemeleri açıklarım.',
   },
   {
     title: 'Şeffafım',

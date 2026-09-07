@@ -62,6 +62,6 @@ Bu bir "doğru-yanlış" meselesi değil; sizin işinize, hedefinize ve risk iş
 
 ---
 
-Kendi durumunuz için hangisinin daha mantıklı olduğunu birlikte hesaplayalım. [Ücretsiz ön görüşmede](/iletisim/) iki senaryoyu da rakamlarla önünüze koyarım. Kuruluş sürecinin detayları için [Şirket Kuruluşu sayfasına](/hizmetler/sirket-kurulusu/), ilk adımlar için [Şişli'de şirket kurma rehberine](/rehber/sisli-sirket-kurulusu-rehberi/) bakabilirsiniz.
+Kendi durumunuz için hangisinin daha uygun olabileceğini birlikte değerlendirelim. [İhtiyaç görüşmesinde](/iletisim/) iki senaryonun kapsamını konuşabiliriz. Kuruluş sürecinin detayları için [Şirket Kuruluşu sayfasına](/hizmetler/sirket-kurulusu/), ilk adımlar için [Şişli'de şirket kurma rehberine](/rehber/sisli-sirket-kurulusu-rehberi/) bakabilirsiniz.
 
 > Not: Bu yazıdaki oran ve tutarlar Temmuz 2026 itibarıyla geçerli mevzuata dayanır (2026 GV tarifesi — 332 Seri No.lu GV Genel Tebliği; kurumlar vergisi %25 — KVK md. 32; kâr payı stopajı %15 — 9286 sayılı CB Kararı; asgari sermaye 50.000 TL — 7887 sayılı CB Kararı; genç girişimci istisnası — GVK mük. md. 20). Oranlar değişebilir; işletmenize özel hesap için benimle iletişime geçin.

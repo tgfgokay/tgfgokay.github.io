@@ -44,6 +44,6 @@ Neredeyse hiçbir şey. Devir-teslim, dijital yetki devri ve kayıt aktarımın�
 
 ---
 
-Mevcut düzeninizi bana devretmeyi düşünüyorsanız, önce bir konuşalım — hangi adımların gerektiğini size özel çıkarırım. [Muhasebe & Bordro hizmetine](/hizmetler/muhasebe-bordro/) bakabilir, [ücretsiz ön görüşme](/iletisim/) için bana ulaşabilirsiniz.
+Mevcut düzeninizi bana devretmeyi düşünüyorsanız, önce bir konuşalım — hangi adımların gerektiğini size özel çıkarırım. [Muhasebe & Bordro hizmetine](/hizmetler/muhasebe-bordro/) bakabilir, [ihtiyaç görüşmesi](/iletisim/) için bana ulaşabilirsiniz.
 
 > Not: Bu yazı genel bilgilendirme amaçlıdır; mevzuat zaman zaman değişebilir. Devir sürecinizin ayrıntıları için lütfen benimle iletişime geçin.

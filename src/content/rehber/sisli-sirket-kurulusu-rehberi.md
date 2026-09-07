@@ -77,6 +77,6 @@ Evraklar tamsa **şahıs işletmesi genellikle 1–2 gün**, **limited/anonim ş
 
 ---
 
-Şişli ve İstanbul genelinde şirket kuruluşunu baştan sona yürütüyorum. Aklınızdaki iş fikrini konuşmak isterseniz, [ücretsiz ön görüşme](/iletisim/) için bir telefon kadar yakınım. Süreç detayları için [Şirket Kuruluşu hizmet sayfasına](/hizmetler/sirket-kurulusu/) bakabilirsiniz.
+Şişli ve İstanbul genelinde şirket kuruluşunu baştan sona yürütüyorum. Aklınızdaki iş fikrini konuşmak isterseniz, [ihtiyaç görüşmesi](/iletisim/) için bir telefon kadar yakınım. Süreç detayları için [Şirket Kuruluşu hizmet sayfasına](/hizmetler/sirket-kurulusu/) bakabilirsiniz.
 
 > Not: Bu yazıdaki tutarlar Temmuz 2026 itibarıyla geçerli mevzuata dayanır (asgari sermaye — 7887 sayılı CB Kararı, RG 25.11.2023; kurumlar vergisi %25 — KVK md. 32; genç girişimci istisnası 400.000 TL — GVK mük. md. 20 ve 2026 tarifesi). Tutarlar değişebilir; güncel durum için benimle iletişime geçin.

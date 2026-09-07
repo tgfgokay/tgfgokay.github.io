@@ -39,7 +39,7 @@ export const servicesEn: ServiceEn[] = [
     title: 'Accounting & Payroll',
     metaDesc:
       'Accounting and payroll for Istanbul SMEs: bookkeeping, social-security filings, e-documents. I track every deadline for you.',
-    short: 'Regular, on-time and error-free accounting. No penalties, no delays to deal with.',
+    short: 'Bookkeeping, payroll and filing processes managed on a regular schedule.',
     summary:
       'From bookkeeping to payroll, from social-security filings to e-documents, I keep your day-to-day accounting in order and track the deadlines for you.',
     icon: 'ledger',
@@ -49,10 +49,10 @@ export const servicesEn: ServiceEn[] = [
     trSlug: 'beyanname-vergi',
     title: 'Tax Returns',
     metaDesc:
-      'VAT, withholding, provisional and annual returns handled by an Istanbul CPA. I plan your lawful tax advantages in advance.',
-    short: 'Your returns filed on time; your tax advantages never overlooked.',
+      'VAT, withholding, provisional and annual returns, with applicable exemptions and deductions assessed under current rules.',
+    short: 'Periodic tracking of returns, payment dates and applicable tax provisions.',
     summary:
-      'VAT, withholding, provisional and annual returns; plus I plan your lawful tax advantages in advance so you don’t pay more than you have to.',
+      'I prepare VAT, withholding, provisional and annual returns and assess applicable exemptions and deductions under current rules.',
     icon: 'receipt',
   },
   {
@@ -61,7 +61,7 @@ export const servicesEn: ServiceEn[] = [
     title: 'Incentives & KOSGEB',
     metaDesc:
       'KOSGEB and investment incentives: eligibility assessment and full application management for SMEs across Istanbul.',
-    short: 'Claim the support you’re entitled to; finance your growth with government incentives.',
+    short: 'Eligibility, application and reporting processes for KOSGEB and investment incentives.',
     summary:
       'I assess your eligibility for KOSGEB, investment incentives and other government support, and manage the application process from start to finish.',
     icon: 'growth',
@@ -74,7 +74,7 @@ export const servicesEn: ServiceEn[] = [
       'Technopark applications, earnings exemption, withholding incentive and social-security support for your software or R&D business in Istanbul.',
     short: 'I run the technopark process end to end for software and R&D businesses.',
     summary:
-      'From the technopark application to applying the exemption, from the personnel withholding incentive to social-security support, I manage the whole process — so your software and R&D business uses every advantage in full.',
+      'I manage technopark applications and track applicable exemptions, withholding incentives and social-security support under current rules.',
     icon: 'spark',
   },
   {
@@ -110,8 +110,8 @@ export const rehberToGuideSlug: Record<string, string> = {
 
 export const processStepsEn = [
   {
-    title: 'Free initial call',
-    text: 'I listen to your situation by phone or WhatsApp. Non-binding and free of charge.',
+    title: 'Scope discussion',
+    text: 'We discuss your current situation and the scope of service by phone or WhatsApp.',
   },
   {
     title: 'Needs analysis',
@@ -133,8 +133,8 @@ export const whyPointsEn = [
     text: 'An accountant who picks up the phone and replies on WhatsApp. Your question never goes unanswered.',
   },
   {
-    title: 'I protect and warn you',
-    text: 'I let you know before a penalty arises; I never miss an advantage.',
+    title: 'I keep you informed',
+    text: 'I flag upcoming obligations and explain provisions that may apply.',
   },
   {
     title: 'I’m transparent',
@@ -146,7 +146,7 @@ export const serviceDetailsEn: Record<string, ServiceDetail> = {
   'company-formation': {
     heroTitle: 'A clean start with the right company type',
     intro:
-      'Company formation is the first step in officially starting a new business: choosing the right company type, preparing the articles of association, completing the trade registry and tax office procedures, and setting up your accounting. You’re ready to grow your business; let me take on the paperwork. In our first talk I explain clearly which company type — sole proprietorship, limited or joint-stock — suits you, the setup and monthly costs you’ll face, and the tax and social-security obligations that await you afterwards. Once we decide together, I run the whole process on your behalf: document preparation, registration, e-signature, ledger certification and e-document applications included. My aim is for you to start on clean, solid ground and never deal with a surprise penalty or missing filing later. You focus on the business itself; leave the formal side to me. From day one I track the deadlines, and we move into regular follow-up with your first return and filings.',
+      'Company formation is the first step in officially starting a new business: choosing the right company type, preparing the articles of association, completing the trade registry and tax office procedures, and setting up your accounting. In our first talk I explain which company type — sole proprietorship, limited or joint-stock — may suit you, the setup and monthly costs, and the tax and social-security obligations that follow. Once we decide together, I run the process on your behalf: document preparation, registration, e-signature, ledger certification and e-document applications included. From day one I track the relevant deadlines and explain the filing requirements as we move into regular follow-up.',
     typeHeading: 'Which company type fits you?',
     typeCards: [
       {
@@ -191,7 +191,7 @@ export const serviceDetailsEn: Record<string, ServiceDetail> = {
   'accounting-payroll': {
     heroTitle: 'Orderly accounting, on-time payroll',
     intro:
-      'Accounting and payroll mean keeping a business’s daily financial records in order and calculating staff wages in line with the law. From bookkeeping to payroll, from social-security filings to e-documents, I carry out all of this for you on a regular basis. I collect your documents digitally or on paper, process the records on time, and prepare each month your staff’s payroll including wages, deductions, leave and social security. Entry/exit notifications, monthly social-security and withholding filings, and e-invoice, e-archive and e-ledger processes are all part of this. Most importantly, I track the deadlines; you never deal with late-payment interest or administrative penalties. At month end I share your position in a plain summary and remind you of upcoming obligations in advance. If you’re moving from another accountant, I handle the handover and record transfer too; I only need your approval. This way accounting stops being a burden that slows you down and becomes an order that runs quietly behind you.',
+      'Accounting and payroll mean keeping a business’s daily financial records in order and calculating staff wages in line with the law. From bookkeeping to payroll, from social-security filings to e-documents, I carry out these processes on a regular basis. I collect your documents digitally or on paper, process the records, and prepare monthly payroll including wages, deductions, leave and social security. Entry and exit notifications, monthly social-security and withholding filings, and e-invoice, e-archive and e-ledger processes are included. I track the schedule and flag upcoming obligations and the possible consequences of delay. At month end I share a plain summary. If you’re moving from another accountant, I handle the handover and record transfer with your approval.',
     stepsHeading: 'How do we run it?',
     steps: [
       { title: 'Handover', text: 'I take over your existing records or set up the order from scratch.' },
@@ -216,13 +216,13 @@ export const serviceDetailsEn: Record<string, ServiceDetail> = {
   },
 
   'tax-returns': {
-    heroTitle: 'Your return on time, your advantage in your pocket',
+    heroTitle: 'Tax return and filing processes',
     intro:
-      'A tax return is your business reporting its income, expenses and tax details to the tax office within the legal period; good planning is what keeps you from paying more tax than necessary. I prepare VAT, withholding, provisional and annual income/corporate returns on time and file them on your behalf. But I don’t leave the job at just filing: before the period closes I share your estimated tax amount and help you plan your payment schedule in advance. I regularly review the exemptions, deductions and incentives that suit your sector and apply the ones you’re entitled to — so you pay the least tax possible within the limits the law allows. By setting up the relationship between provisional tax, withholding and the annual return correctly, I prevent surprises that could arise at year-end. Because I track the deadlines, there are no delays or related penalties. You know what you’ll pay in advance, clearly; I never hide behind the numbers. My aim is to make tax both lawful and predictable.',
+      'A tax return reports your business’s income, expenses and tax details to the tax office within the legal period. I prepare VAT, withholding, provisional and annual income or corporate returns and file them on your behalf. Before the period closes I share the estimated tax amount and payment schedule. I assess exemptions, deductions and incentives that may apply to your sector under current rules. I explain the relationship between provisional tax, withholding and the annual return, and flag upcoming deadlines and the possible consequences of delay. The aim is to keep the tax process compliant and predictable.',
     stepsHeading: 'How do we work?',
     steps: [
       { title: 'Review', text: 'I assess your records and your position for the period.' },
-      { title: 'Planning', text: 'We plan the lawful advantages and exemptions in advance.' },
+      { title: 'Assessment', text: 'We assess applicable exemptions and deductions under current rules.' },
       { title: 'Filing', text: 'I prepare the returns and file them on time.' },
       { title: 'Briefing', text: 'You know what you’ll pay in advance, without surprises.' },
     ],
@@ -237,15 +237,15 @@ export const serviceDetailsEn: Record<string, ServiceDetail> = {
     ],
     faqs: [
       { q: 'Can I know how much tax I’ll pay in advance?', a: 'Yes. Before the period closes I share the estimated amount and help you plan.' },
-      { q: 'How do you capture tax advantages?', a: 'I regularly review the exemptions, deductions and incentives suited to your sector and apply the applicable ones.' },
-      { q: 'What happens if a return is late?', a: 'Because I track the deadlines, there are no delays; I prevent any potential penalties in advance.' },
+      { q: 'How do you assess exemptions, deductions and incentives?', a: 'I review the provisions that may apply to your sector and transactions, then explain their scope and conditions.' },
+      { q: 'What happens if a return is late?', a: 'A late filing may have tax and procedural consequences; I track the schedule and flag upcoming deadlines.' },
     ],
   },
 
   'incentives-kosgeb': {
-    heroTitle: 'Claim the support you’re entitled to',
+    heroTitle: 'KOSGEB and incentive processes',
     intro:
-      'Government support and incentives are programmes that let you finance your growth with public resources alongside your own. For KOSGEB support, the investment incentive certificate and other government support, I first assess your eligibility and then manage the application process from start to finish. Looking at your size, sector and growth plan, I list for you the programmes you can enter and, within the scattered legislation, single out the ones that genuinely fit you. I prepare the application file, submit it on your behalf and track the result. Even after approval the work doesn’t end: we manage the entitlement, reporting and obligations together, so the support you receive isn’t reclaimed. Newly formed companies can also benefit from many programmes — in fact, if you’re at the formation stage, we increase your chances of support by structuring things correctly from the very start. My aim is that you don’t leave on the table the support you’re entitled to but that most businesses aren’t even aware of. Let’s plan your growth together with the opportunities the state offers.',
+      'Government support and incentives may provide financing or tax relief subject to programme conditions. For KOSGEB support, investment incentive certificates and other programmes, I assess eligibility based on your size, sector and plan. I prepare the application file and track the process. After approval, we manage entitlement, reporting and other obligations together. For newly formed companies, eligibility is assessed separately under the current conditions of each programme.',
     stepsHeading: 'How does the process work?',
     steps: [
       { title: 'Eligibility', text: 'I determine which support and incentives you qualify for.' },
@@ -265,17 +265,17 @@ export const serviceDetailsEn: Record<string, ServiceDetail> = {
     faqs: [
       { q: 'Which support am I eligible for, and how do I find out?', a: 'I list the suitable support for you based on your business’s size, sector and plan.' },
       { q: 'Do you handle the application?', a: 'Yes. I prepare the file, submit the application and track the result.' },
-      { q: 'Can a newly formed company benefit too?', a: 'In many programmes, yes. If you’re at the formation stage, we boost your chances of support by structuring it right from the start.' },
+      { q: 'Can a newly formed company benefit too?', a: 'It may be possible under some programmes; eligibility must be assessed against the current programme conditions.' },
     ],
   },
 
   'technopark-rd': {
     heroTitle: 'I run your technopark process end to end',
     intro:
-      'A technopark (technology development zone) is an area that offers software, R&D and design businesses significant tax advantages under Law No. 4691. I run the technopark process for these businesses end to end: from the zone application to applying the earnings exemption, from the personnel income-tax withholding incentive to social-security employer-premium support. As a first step I look at your business structure and staff and lay out, in numbers, the advantage the technopark will bring you. Then I separate qualifying activities within the exemption from those outside its scope and structure things correctly from the start — because the most common mistake in a technopark is applying the exemption more broadly than it should be and running into trouble later. I carry out the zone admission and application processes on your behalf and prepare the paperwork. After admission, I regularly track the correct application of the exemption, the withholding incentive and social-security support. I use every advantage in full and set up the scope without error; you focus on your software and your growth.',
+      'A technopark (technology development zone) provides exemption and incentive provisions for software, R&D and design businesses under Law No. 4691. I manage the zone application and the processes relating to the earnings exemption, personnel income-tax withholding incentive and social-security employer-premium support. I assess the provisions that may apply to your business and staff structure and their possible financial effects. I separate qualifying activities from work outside the scope, prepare the application paperwork, and track the relevant provisions after admission under current conditions.',
     stepsHeading: 'How do we run it?',
     steps: [
-      { title: 'Assessment', text: 'I look at your business structure and staff and lay out the technopark advantage in numbers.' },
+      { title: 'Assessment', text: 'I assess applicable provisions and possible financial effects based on your business and staff structure.' },
       { title: 'Structuring', text: 'I separate in-scope and out-of-scope activities from the start and structure things correctly.' },
       { title: 'Application', text: 'I run the zone admission and application processes on your behalf and prepare the paperwork.' },
       { title: 'Follow-up', text: 'I regularly track the correct application of the exemption, withholding incentive and social-security support.' },
@@ -328,7 +328,7 @@ export const serviceDetailsEn: Record<string, ServiceDetail> = {
 export const pages = {
   home: {
     metaDescription:
-      'The accountant alongside SMEs across Istanbul: company formation, accounting & payroll, tax returns, incentives. My phone is always on — free first call.',
+      'Accounting for SMEs across Istanbul: company formation, payroll, tax returns and incentives. Contact and service-scope information.',
     pill: 'Istanbul-wide · Accepting new clients',
     h1pre: 'Your SME’s',
     h1grad: 'Financial Advisor',
@@ -342,7 +342,7 @@ export const pages = {
     servicesLede:
       'Whichever you need — setup from scratch, regular follow-up, or one-off advisory.',
     whyEyebrow: 'Why me?',
-    whyHeading: 'More than a bookkeeper',
+    whyHeading: 'How I work',
     processEyebrow: 'How we work',
     processHeading: 'We start together in 4 steps',
     portalEyebrow: 'Existing clients',
@@ -375,7 +375,7 @@ export const pages = {
     detail: 'View details',
   },
   serviceDetail: {
-    freeCall: 'Free Initial Call',
+    freeCall: 'Scope Discussion',
     waWrite: 'Message on WhatsApp',
     processEyebrow: 'Process',
     faqEyebrow: 'Frequently asked',
@@ -395,7 +395,7 @@ export const pages = {
     noteHeading: 'A note from the founder',
     note: [
       'Hi, I’m Gökay. For years I’ve been handling the financial affairs of businesses in Istanbul. The biggest gap I’ve seen in this work is owners’ questions going unanswered.',
-      'I work differently: I pick up the phone, I reply on WhatsApp, I warn you before a penalty arises. I don’t hide behind the numbers; I explain what I do and what you pay in plain language.',
+      'I work differently: I pick up the phone, reply on WhatsApp and explain upcoming obligations in plain language. I don’t hide behind the numbers; I explain what I do and what you pay.',
       'Whether you’re starting a new company or want to hand over your existing setup — I take on the paperwork side, and you get on with your business.',
     ],
     sign: '— Gökay Gül, Certified Public Accountant (SMMM)',
@@ -440,7 +440,7 @@ export const pages = {
       'From company formation to the tax calendar, I’ve explained the most-asked topics in plain language. If you can’t find what you’re looking for, I’m just a phone call away.',
     readMore: 'Read more',
     ctaHeading: 'Not finding the answer here?',
-    ctaText: 'Ask directly. A free initial call is non-binding.',
+    ctaText: 'Ask directly. The initial call covers your situation and the service scope.',
     relatedEyebrow: 'Related service',
     allPosts: 'All guide articles',
   },

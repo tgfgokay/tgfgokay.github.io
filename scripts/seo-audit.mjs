@@ -1,8 +1,9 @@
 // TGF dist/ statik SEO+GEO denetimi — HTTP'siz, dosya tabanlı
 import { readFileSync, readdirSync, statSync, existsSync } from 'fs';
 import { join } from 'path';
+import { fileURLToPath } from 'url';
 
-const DIST = process.argv[2] ?? new URL('../dist', import.meta.url).pathname;
+const DIST = process.argv[2] ?? fileURLToPath(new URL('../dist', import.meta.url));
 const htmlFiles = [];
 (function walk(d) {
   for (const f of readdirSync(d)) {

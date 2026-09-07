@@ -39,7 +39,7 @@ export const ui = {
     portal: 'Mükellef Girişi',
     whatsapp: 'WhatsApp',
     waWrite: 'WhatsApp’tan yaz',
-    freeCall: 'Ücretsiz Ön Görüşme',
+    freeCall: 'İhtiyaç Görüşmesi',
     menuOpen: 'Menüyü aç',
     brandAria: 'TGF Mali Müşavirlik ana sayfa',
     navAria: 'Ana menü',
@@ -55,7 +55,7 @@ export const ui = {
     // CTA strip
     ctaHeading: 'Bir soru mu var? Önce konuşalım.',
     ctaText:
-      'Ücretsiz ön görüşme bağlayıcı değil. Durumunuzu dinleyeyim, en doğru yolu birlikte bulalım.',
+      'Ön görüşmede mevcut durumunuzu ve ihtiyaç duyduğunuz hizmet kapsamını birlikte değerlendiririz.',
     // Contact section
     contactEyebrow: 'İletişim',
     contactHeading: 'Hadi tanışalım',
@@ -110,7 +110,7 @@ export const ui = {
     portal: 'Client Login',
     whatsapp: 'WhatsApp',
     waWrite: 'Message on WhatsApp',
-    freeCall: 'Free Initial Call',
+    freeCall: 'Scope Discussion',
     menuOpen: 'Open menu',
     brandAria: 'TGF Mali Müşavirlik home',
     navAria: 'Main menu',
@@ -124,7 +124,7 @@ export const ui = {
     rights: 'All rights reserved.',
     ctaHeading: 'Have a question? Let’s talk first.',
     ctaText:
-      'A free initial call is not binding. Tell me your situation and we’ll find the right path together.',
+      'The initial call covers your current situation and the scope of service you may need.',
     contactEyebrow: 'Contact',
     contactHeading: 'Let’s meet',
     contactLede:

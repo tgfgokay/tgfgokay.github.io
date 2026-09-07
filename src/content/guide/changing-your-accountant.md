@@ -44,6 +44,6 @@ Almost nothing. I handle the handover, the digital authorisation transfer and th
 
 ---
 
-If you’re thinking of handing your existing setup over to me, let’s talk first — I’ll draw up, specifically for you, which steps are needed. Take a look at the [Accounting & Payroll service](/en/services/accounting-payroll/), and you can reach me for a [free initial call](/en/contact/).
+If you’re thinking of handing your existing setup over to me, let’s talk first — I’ll draw up, specifically for you, which steps are needed. Take a look at the [Accounting & Payroll service](/en/services/accounting-payroll/), and you can reach me for a [scope discussion](/en/contact/).
 
 > Note: This article is for general information; legislation can change from time to time. For the details of your transfer process, please get in touch with me.

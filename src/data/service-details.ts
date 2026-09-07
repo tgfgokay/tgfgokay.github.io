@@ -20,7 +20,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   'sirket-kurulusu': {
     heroTitle: 'Doğru şirket türüyle, temiz bir başlangıç',
     intro:
-      'Şirket kuruluşu, yeni bir işi resmi olarak başlatmanın ilk adımıdır: doğru şirket türünü seçmek, ana sözleşmeyi hazırlamak, ticaret sicil ve vergi dairesi işlemlerini tamamlamak ve muhasebe düzenini kurmak. İşinizi büyütmeye hazırsınız; ben de kağıt işini üstleneyim. İlk konuşmamızda hangi şirket türünün — şahıs, limited ya da anonim — size uyduğunu, karşılaşacağınız kuruluş ve aylık maliyetleri, sonrasında sizi bekleyen beyanname ve SGK yükümlülüklerini açıkça anlatırım. Kararı birlikte verdikten sonra bütün süreci sizin adınıza yürütürüm: evrak hazırlığı, tescil, e-imza, defter tasdiki ve e-belge başvuruları dahil. Amacım, işe temiz ve sağlam bir zeminde başlamanız; ileride sürpriz bir ceza ya da eksik bildirimle uğraşmamanız. Siz işinizin kendisine odaklanın, resmi tarafı bana bırakın. Kuruluştan itibaren tarihleri ben takip eder, ilk beyannameniz ve bildirimlerinizle birlikte düzenli takibe geçeriz.',
+      'Şirket kuruluşu, yeni bir işi resmi olarak başlatmanın ilk adımıdır: doğru şirket türünü seçmek, ana sözleşmeyi hazırlamak, ticaret sicil ve vergi dairesi işlemlerini tamamlamak ve muhasebe düzenini kurmak. İlk konuşmamızda hangi şirket türünün — şahıs, limited ya da anonim — size uyabileceğini, kuruluş ve aylık maliyetleri, sonrasında doğan beyanname ve SGK yükümlülüklerini açıklarım. Kararı birlikte verdikten sonra evrak hazırlığı, tescil, e-imza, defter tasdiki ve e-belge başvurularını yürütürüm. Kuruluştan itibaren ilgili takvimi takip eder, ilk beyanname ve bildirimlerle birlikte düzenli izlemeye geçeriz.',
     typeHeading: 'Hangi şirket türü size göre?',
     typeCards: [
       {
@@ -65,7 +65,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   'muhasebe-bordro': {
     heroTitle: 'Düzenli muhasebe, zamanında bordro',
     intro:
-      'Muhasebe ve bordro, bir işletmenin günlük mali kayıtlarının düzenli tutulması ve personel ücretlerinin yasaya uygun hesaplanmasıdır. Defter kaydından bordroya, SGK bildiriminden e-belgeye kadar bütün bu işleri sizin yerinize düzenli olarak yürütürüm. Belgelerinizi dijital ya da kağıt olarak toplar, kayıtları zamanında işler; personelinizin ücret, kesinti, izin ve SGK hesaplarını içeren bordrosunu her ay hazırlarım. İşe giriş-çıkış bildirimleri, aylık SGK ve muhtasar bildirimleri, e-fatura, e-arşiv ve e-defter süreçleri de bu kapsamdadır. En önemlisi, tarihleri ben takip ederim; siz gecikme faizi ya da idari cezayla uğraşmazsınız. Ayın sonunda durumunuzu sade bir özetle paylaşır, yaklaşan yükümlülükleri önceden hatırlatırım. Başka bir müşavirden geçiyorsanız devir ve kayıt aktarımını da ben yaparım; sizden yalnızca onay beklerim. Böylece muhasebe, işinizi yavaşlatan bir yük olmaktan çıkar; arkanızda sessizce işleyen bir düzene dönüşür.',
+      'Muhasebe ve bordro, bir işletmenin günlük mali kayıtlarının düzenli tutulması ve personel ücretlerinin yasaya uygun hesaplanmasıdır. Defter kaydından bordroya, SGK bildiriminden e-belgeye kadar bütün bu işleri sizin yerinize düzenli olarak yürütürüm. Belgelerinizi dijital ya da kağıt olarak toplar, kayıtları zamanında işler; personelinizin ücret, kesinti, izin ve SGK hesaplarını içeren bordrosunu her ay hazırlarım. İşe giriş-çıkış bildirimleri, aylık SGK ve muhtasar bildirimleri, e-fatura, e-arşiv ve e-defter süreçleri de bu kapsamdadır. Takvimi düzenli izler, yaklaşan yükümlülükleri ve olası gecikme sonuçlarını önceden bildiririm. Ayın sonunda durumunuzu sade bir özetle paylaşırım. Başka bir müşavirden geçiyorsanız devir ve kayıt aktarımını da ben yaparım; sizden yalnızca onay beklerim. Böylece muhasebe, işinizi yavaşlatan bir yük olmaktan çıkar; arkanızda düzenli işleyen bir sürece dönüşür.',
     stepsHeading: 'Nasıl yürütüyoruz?',
     steps: [
       { title: 'Devir', text: 'Mevcut kayıtlarınızı devralır ya da sıfırdan düzeni kurarım.' },
@@ -90,15 +90,15 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 
   'beyanname-vergi': {
-    heroTitle: 'Beyannameniz zamanında, avantajınız cebinizde',
+    heroTitle: 'Beyanname ve vergi süreçleri',
     intro:
-      'Beyanname, işletmenizin gelir, gider ve vergi bilgilerini yasal sürede vergi dairesine bildirmesidir; doğru planlama ise gereğinden fazla vergi ödememenizi sağlar. KDV, muhtasar, geçici ve yıllık gelir/kurumlar beyannamelerini zamanında hazırlar, sizin adınıza veririm. Ama işi yalnızca beyannameyi vermekle bırakmam: dönem kapanmadan tahmini vergi tutarınızı paylaşır, ödeme takviminizi önceden planlamanıza yardımcı olurum. Sektörünüze uygun istisna, indirim ve teşvikleri düzenli olarak gözden geçirir, hakkınız olan avantajları uygularım; böylece kanunun tanıdığı sınırlar içinde mümkün olan en az vergiyi ödersiniz. Geçici vergi, stopaj ve yıllık beyan arasındaki ilişkiyi doğru kurarak yıl sonunda çıkabilecek sürprizleri baştan önlerim. Tarihleri ben takip ettiğim için gecikme ve buna bağlı cezalar yaşanmaz. Ne ödeyeceğinizi önceden, açıkça bilirsiniz; rakamların arkasına saklanmam. Amacım vergiyi hem yasaya uygun hem de öngörülebilir kılmak.',
+      'Beyanname, işletmenizin gelir, gider ve vergi bilgilerini yasal sürede vergi dairesine bildirmesidir. KDV, muhtasar, geçici ve yıllık gelir/kurumlar beyannamelerini hazırlar ve sizin adınıza veririm. Dönem kapanmadan tahmini vergi tutarını ve ödeme takvimini paylaşırım. Sektörünüze uygulanabilecek istisna, indirim ve teşvikleri yürürlükteki düzenlemeler kapsamında değerlendiririm. Geçici vergi, stopaj ve yıllık beyan arasındaki ilişkiyi açıklar; yaklaşan süreleri ve gecikmenin doğurabileceği sonuçları bildiririm. Amaç, vergi süreçlerini mevzuata uygun ve öngörülebilir biçimde yürütmektir.',
     stepsHeading: 'Nasıl çalışıyoruz?',
     steps: [
       { title: 'İnceleme', text: 'Kayıtlarınızı ve dönemsel durumunuzu değerlendiririm.' },
-      { title: 'Planlama', text: 'Yasal avantaj ve istisnaları önceden planlarız.' },
+      { title: 'Değerlendirme', text: 'Uygulanabilir istisna ve indirimleri mevzuat kapsamında değerlendiririz.' },
       { title: 'Beyan', text: 'Beyannameleri hazırlar, zamanında veririm.' },
-      { title: 'Bilgilendirme', text: 'Ne ödeyeceğinizi önceden, sürprizsiz bilirsiniz.' },
+      { title: 'Bilgilendirme', text: 'Tahmini tutar ve ödeme takvimi hakkında dönem kapanmadan bilgi veririm.' },
     ],
     includedHeading: 'Neler dahil?',
     included: [
@@ -111,15 +111,15 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ],
     faqs: [
       { q: 'Ne kadar vergi ödeyeceğimi önceden öğrenebilir miyim?', a: 'Evet. Dönem kapanmadan tahmini tutarı paylaşır, planlamanıza yardımcı olurum.' },
-      { q: 'Vergi avantajlarını nasıl yakalıyorsunuz?', a: 'Sektörünüze uygun istisna, indirim ve teşvikleri düzenli olarak gözden geçirir, uygun olanları uygularım.' },
-      { q: 'Beyanname gecikirse ne olur?', a: 'Tarihleri ben takip ettiğim için gecikme yaşanmaz; olası cezaları önceden önlerim.' },
+      { q: 'İstisna, indirim ve teşvikleri nasıl değerlendiriyorsunuz?', a: 'Sektörünüz ve işlemleriniz için uygulanabilir düzenlemeleri gözden geçirir, kapsam ve koşulları sizinle paylaşırım.' },
+      { q: 'Beyanname gecikirse ne olur?', a: 'Gecikmenin vergi ve usul sonuçları olabilir; takvimi izler ve yaklaşan süreleri bildiririm.' },
     ],
   },
 
   'tesvik-kosgeb': {
-    heroTitle: 'Hakkınız olan destekleri alın',
+    heroTitle: 'KOSGEB ve teşvik süreçleri',
     intro:
-      'Devlet destekleri ve teşvikler, işletmenizin büyümesini kendi kaynaklarınızın yanında kamu kaynaklarıyla da finanse etmenizi sağlayan programlardır. KOSGEB destekleri, yatırım teşvik belgesi ve diğer devlet desteklerinde önce uygunluğunuzu değerlendirir, ardından başvuru sürecini baştan sona yönetirim. İşletmenizin ölçeğine, sektörüne ve büyüme planınıza bakarak hangi programlara girebileceğinizi sizin için listeler; dağınık mevzuatın içinde size gerçekten uyanları ayıklarım. Başvuru dosyasını hazırlar, başvuruyu sizin adınıza yapar ve sonucu takip ederim. Onay sonrasında da iş bitmez: hak ediş, raporlama ve yükümlülükleri birlikte yönetiriz; böylece aldığınız destek geri istenmez. Yeni kurulan şirketler de birçok programdan faydalanabilir — hatta kuruluş aşamasındaysanız yapıyı en baştan doğru kurarak destek şansınızı artırırız. Amacım, hakkınız olan ama çoğu işletmenin farkında bile olmadığı destekleri masada bırakmamanız. Büyümenizi devletin sunduğu imkânlarla birlikte planlayalım.',
+      'Devlet destekleri ve teşvikler, işletmelere program koşullarına bağlı finansman ve vergi imkanları sunabilir. KOSGEB destekleri, yatırım teşvik belgesi ve diğer programlarda işletmenizin ölçeği, sektörü ve planına göre uygunluk değerlendirmesi yaparım. Başvuru dosyasını hazırlar, süreci takip ederim. Onay sonrasında hak ediş, raporlama ve diğer yükümlülüklerin takibini birlikte yürütürüz. Yeni kurulan şirketler bakımından uygunluk, her programın güncel koşullarına göre ayrıca değerlendirilir.',
     stepsHeading: 'Süreç nasıl işliyor?',
     steps: [
       { title: 'Uygunluk', text: 'Hangi destek ve teşviklere uygun olduğunuzu tespit ederim.' },
@@ -139,17 +139,17 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     faqs: [
       { q: 'Hangi desteklere uygunum, nasıl anlarım?', a: 'İşletmenizin ölçeğine, sektörüne ve planınıza bakarak uygun destekleri sizin için listelerim.' },
       { q: 'Başvuruyu siz mi yapıyorsunuz?', a: 'Evet. Dosyayı hazırlar, başvuruyu yapar ve sonucu takip ederim.' },
-      { q: 'Yeni kurulan şirket de faydalanabilir mi?', a: 'Birçok programda evet. Kuruluş aşamasındaysanız, en baştan doğru kurgulayarak destek şansınızı artırırız.' },
+      { q: 'Yeni kurulan şirket de faydalanabilir mi?', a: 'Bazı programlarda mümkün olabilir; uygunluk güncel program koşullarına göre ayrıca değerlendirilir.' },
     ],
   },
 
   teknopark: {
     heroTitle: 'Teknopark süreçlerinizi baştan sona yürütüyorum',
     intro:
-      'Teknopark (teknoloji geliştirme bölgesi), yazılım, Ar-Ge ve tasarım işletmelerine 4691 sayılı Kanun kapsamında ciddi vergi avantajları sunan bölgelerdir. Bu işletmelerin teknopark süreçlerini baştan sona ben yürütüyorum: bölgeye başvurudan kazanç istisnasının uygulanmasına, personel gelir vergisi stopaj teşvikinden SGK işveren primi desteğine kadar. İlk adımda işinizin yapısına ve personelinize bakar, teknoparkın size sağlayacağı avantajı rakamlarla ortaya koyarım. Ardından istisna kapsamına giren nitelikli faaliyetlerle kapsam dışı işleri baştan ayırır, yapıyı doğru kurarım — çünkü teknoparkta en sık yapılan hata, istisnayı olduğundan geniş uygulayıp sonradan sorun yaşamaktır. Bölgeye kabul ve başvuru süreçlerini sizin adınıza yürütür, evrakı hazırlarım. Kabul sonrasında da istisna, stopaj teşviki ve SGK desteğinin doğru uygulanmasını düzenli takip ederim. Avantajları eksiksiz kullanır, kapsamı hatasız kurarım; siz yazılımınıza ve büyümenize odaklanırsınız.',
+      'Teknopark (teknoloji geliştirme bölgesi), yazılım, Ar-Ge ve tasarım işletmelerine 4691 sayılı Kanun kapsamında istisna ve teşvik düzenlemeleri sunar. Bölgeye başvuru, kazanç istisnası, personel gelir vergisi stopaj teşviki ve SGK işveren primi desteğine ilişkin süreçleri yürütürüm. İş ve personel yapınıza göre uygulanabilir düzenlemeleri ve olası mali etkileri değerlendiririm. İstisna kapsamına giren nitelikli faaliyetlerle kapsam dışı işleri ayırır, başvuru evrakını hazırlarım. Kabul sonrasında istisna ve teşvik uygulamalarını güncel koşullar çerçevesinde takip ederim.',
     stepsHeading: 'Nasıl yürütüyoruz?',
     steps: [
-      { title: 'Değerlendirme', text: 'İşinizin yapısına ve personelinize bakar, teknoparkın size sağlayacağı avantajı rakamlarla ortaya koyarım.' },
+      { title: 'Değerlendirme', text: 'İş ve personel yapınıza göre uygulanabilir düzenlemeleri ve olası mali etkileri değerlendiririm.' },
       { title: 'Kurgu', text: 'İstisna kapsamına giren ve girmeyen faaliyetleri baştan ayırır, yapıyı doğru kurarım.' },
       { title: 'Başvuru', text: 'Bölgeye kabul ve gerekli başvuru süreçlerini sizin adınıza yürütür, evrakı hazırlarım.' },
       { title: 'Takip', text: 'İstisna, stopaj teşviki ve SGK desteğinin doğru uygulanmasını düzenli takip ederim.' },

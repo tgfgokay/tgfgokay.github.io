@@ -62,6 +62,6 @@ This isn't a matter of "right or wrong"; it's a balance that depends on your bus
 
 ---
 
-Let's calculate together which makes more sense for your situation. In a [free initial call](/en/contact/) I'll lay out both scenarios for you, with the numbers. For the details of the formation process, see the [Company Formation page](/en/services/company-formation/); for the first steps, take a look at the [guide to setting up a company in Şişli](/en/guide/sisli-company-formation-guide/).
+Let’s assess which option may fit your situation. In a [scope discussion](/en/contact/) we can review the two scenarios and their requirements. For the details of the formation process, see the [Company Formation page](/en/services/company-formation/); for the first steps, take a look at the [guide to setting up a company in Şişli](/en/guide/sisli-company-formation-guide/).
 
 > Note: The rates and amounts in this article are based on legislation in force as of July 2026 (2026 income-tax schedule — General Communiqué No. 332; corporate tax 25% — Corporate Tax Law art. 32; dividend withholding 15% — Presidential Decree No. 9286; minimum capital TRY 50,000 — Presidential Decree No. 7887; young entrepreneur exemption — Income Tax Law repeated art. 20). Rates can change; get in touch with me for a calculation specific to your business.
