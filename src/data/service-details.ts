@@ -173,7 +173,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   danismanlik: {
     heroTitle: 'Daha büyük kararlarda yanınızda',
     intro:
-      'Mali danışmanlık, işletmeniz büyürken karşınıza çıkan ve günlük muhasebenin ötesine geçen kararlarda uzman desteği almanızdır. Şirket değerleme, birleşme, devir ve bölünme, uluslararası vergi ve çifte vergilendirme, ortaklık yapısı ve pay devri gibi konularda deneyimimle yanınızda dururum. Önce ihtiyacınızı ve hedefinizi net biçimde anlar, durumu mali ve vergisel açıdan değerlendiririm. Sonra riskleri ve avantajlarıyla birlikte önünüze birden fazla yol koyarım; kararı sağlıklı bir zeminde vermenizi sağlarım. Kararı verdikten sonra da yalnız bırakmam — uygulamayı hayata geçirir, süreci yönetirim. Bu hizmetleri tek seferlik de alabilirsiniz; belirli bir işlem ya da karar için sınırlı kapsamda çalışabiliriz. Daha üst düzey, sınır ötesi veya yüksek hacimli yapılarda gerekirse gokaygul.com üzerinden yürüttüğüm daha kapsamlı danışmanlığa da yönlendiririm. Amacım, büyümenin getirdiği karmaşık kararları yalnız vermek zorunda kalmamanız.',
+      'Mali danışmanlık, işletmeniz büyürken karşınıza çıkan ve günlük muhasebenin ötesine geçen kararlarda uzman desteği almanızdır. Şirket değerleme, birleşme, devir ve bölünme, uluslararası vergi ve çifte vergilendirme, ortaklık yapısı ve pay devri gibi konularda deneyimimle yanınızda dururum. Önce ihtiyacınızı ve hedefinizi net biçimde anlar, durumu mali ve vergisel açıdan değerlendiririm. Sonra riskleri ve avantajlarıyla birlikte önünüze birden fazla yol koyarım; kararı sağlıklı bir zeminde vermenizi sağlarım. Kararı verdikten sonra da yalnız bırakmam — uygulamayı hayata geçirir, süreci yönetirim. Bu hizmetleri tek seferlik de alabilirsiniz; belirli bir işlem ya da karar için sınırlı kapsamda çalışabiliriz. Amacım, büyümenin getirdiği karmaşık kararları yalnız vermek zorunda kalmamanız.',
     stepsHeading: 'Nasıl ilerliyoruz?',
     steps: [
       { title: 'Dinleme', text: 'İhtiyacınızı ve hedefinizi net biçimde anlarım.' },
@@ -193,7 +193,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     faqs: [
       { q: 'Tek seferlik danışmanlık alabilir miyim?', a: 'Evet. Belirli bir karar ya da işlem için tek seferlik danışmanlık verebilirim.' },
       { q: 'Uluslararası vergi konusunda destek var mı?', a: 'Evet. Sınır ötesi işlem ve yapılarda vergisel etkileri değerlendirir, yol gösteririm.' },
-      { q: 'Bu hizmetler kimler için?', a: 'Büyüyen KOBİ’ler ve daha kurumsal ihtiyaçları olan işletmeler için. Gerekirse gokaygul.com üzerinden daha üst düzey danışmanlığa da yönlendiririm.' },
+      { q: 'Bu hizmetler kimler için?', a: 'Büyüyen KOBİ’ler ve daha kurumsal ihtiyaçları olan işletmeler için.' },
     ],
   },
 };

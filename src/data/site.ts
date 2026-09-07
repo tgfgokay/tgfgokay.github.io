@@ -38,7 +38,7 @@ export const site = {
   vkn: '65284104820', // 11 hane — şahıs işletmesi (TC = VKN)
   chamber: 'İstanbul SMMM Odası (İSMMMO)',
 
-  // Çalışma saatleri (varsayım — netleşince güncelle)
+  // Google İşletme Profili düzenlemesi sırasında kullanıcı tarafından teyit edildi.
   hours: 'Pazartesi – Cuma, 09:00 – 18:00',
   hoursSchema: 'Mo,Tu,We,Th,Fr 09:00-18:00',
 

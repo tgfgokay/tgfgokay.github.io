@@ -82,7 +82,9 @@ const businessSchema = {
   },
   areaServed: { '@type': 'City', name: 'İstanbul' },
   openingHours: site.hoursSchema,
-  sameAs: [site.linkedin, site.gokaygul],
+  // TGF kurumsal varlığını kişisel danışmanlık sitesinden ayrı tut.
+  // Kurucunun kişisel profili, hakkımızda sayfasındaki Person şemasında bağlıdır.
+  sameAs: [site.linkedin],
 };
 
 const schemas = [businessSchema, ...jsonLd];

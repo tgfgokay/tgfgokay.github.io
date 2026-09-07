@@ -299,7 +299,7 @@ export const serviceDetailsEn: Record<string, ServiceDetail> = {
   advisory: {
     heroTitle: 'By your side on the bigger decisions',
     intro:
-      'Financial advisory means getting expert support on the decisions that go beyond day-to-day accounting as your business grows. In areas such as company valuation, merger, transfer and demerger, international tax and double taxation, and partnership structure and share transfer, I stand by you with my experience. First I understand your need and your goal clearly and assess the situation from a financial and tax standpoint. Then I lay out more than one path before you, with the risks and advantages of each, so you make the decision on solid ground. And once you’ve decided, I don’t leave you alone — I put the decision into action and manage the process. You can also take these services on a one-off basis; we can work within a limited scope for a specific transaction or decision. For higher-level, cross-border or high-volume structures, if needed I also refer you to the more comprehensive advisory I run through gokaygul.com. My aim is that you don’t have to make the complex decisions that growth brings on your own.',
+      'Financial advisory means getting expert support on the decisions that go beyond day-to-day accounting as your business grows. In areas such as company valuation, merger, transfer and demerger, international tax and double taxation, and partnership structure and share transfer, I stand by you with my experience. First I understand your need and your goal clearly and assess the situation from a financial and tax standpoint. Then I lay out more than one path before you, with the risks and advantages of each, so you make the decision on solid ground. And once you’ve decided, I don’t leave you alone — I put the decision into action and manage the process. You can also take these services on a one-off basis; we can work within a limited scope for a specific transaction or decision. My aim is that you don’t have to make the complex decisions that growth brings on your own.',
     stepsHeading: 'How do we proceed?',
     steps: [
       { title: 'Listening', text: 'I understand your need and your goal clearly.' },
@@ -319,7 +319,7 @@ export const serviceDetailsEn: Record<string, ServiceDetail> = {
     faqs: [
       { q: 'Can I get one-off advisory?', a: 'Yes. I can provide one-off advisory for a specific decision or transaction.' },
       { q: 'Is there support on international tax?', a: 'Yes. I assess the tax implications of cross-border transactions and structures and guide you.' },
-      { q: 'Who are these services for?', a: 'For growing SMEs and businesses with more corporate needs. If needed, I also direct you to higher-level advisory via gokaygul.com.' },
+      { q: 'Who are these services for?', a: 'For growing SMEs and businesses with more corporate needs.' },
     ],
   },
 };

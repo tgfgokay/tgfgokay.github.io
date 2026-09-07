@@ -47,8 +47,15 @@ for (const file of htmlFiles) {
   const hreflangs = getAll(html, /hreflang="([^"]*)"/g);
   if (!rel.includes('404') && hreflangs.length < 3) issues.push(`${rel}: hreflang eksik (${hreflangs.join(',')})`);
 
+  const schemas = [];
   for (const block of getAll(html, /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
-    try { JSON.parse(block); } catch { issues.push(`${rel}: BOZUK JSON-LD`); }
+    try { schemas.push(JSON.parse(block)); } catch { issues.push(`${rel}: BOZUK JSON-LD`); }
+  }
+
+  const business = schemas.find((schema) => schema?.['@type'] === 'AccountingService');
+  if (!business) issues.push(`${rel}: AccountingService JSON-LD YOK`);
+  else if (Array.isArray(business.sameAs) && business.sameAs.includes('https://gokaygul.com')) {
+    issues.push(`${rel}: TGF kurumsal şeması gokaygul.com ile aynı varlık olarak işaretlenmiş`);
   }
 
   for (const img of html.matchAll(/<img\b[^>]*>/g)) {
@@ -63,6 +70,9 @@ for (const file of htmlFiles) {
   }
 
   if (!get(html, /property="og:image" content="([^"]*)"/)) issues.push(`${rel}: og:image yok`);
+  if (/href="https:\/\/gokaygul\.com\/?"/.test(html)) {
+    issues.push(`${rel}: TGF sayfasında gokaygul.com çapraz bağlantısı var`);
+  }
 }
 
 const sm = join(DIST, 'sitemap.xml');
@@ -79,3 +89,4 @@ console.log('llms.txt:', existsSync(join(DIST, 'llms.txt')) ? 'VAR' : 'YOK');
 console.log('\n== İSTATİSTİK ==', JSON.stringify(stats));
 console.log(`\n== SORUNLAR (${issues.length}) ==`);
 issues.forEach(i => console.log(' -', i));
+if (issues.length) process.exitCode = 1;

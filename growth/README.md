@@ -23,13 +23,21 @@ Olay alanları yalnızca sayfa yolu, dil, CTA konumu, kanal, hizmet kategorisi, 
 
 GA4 mülkü ve web akışı 7 Eylül 2026'da Gökay'ın açık onayıyla oluşturuldu. Google etiketi yalnız analitik onayı sonrasında yüklenir; ön-onay yerel olayları aktarılmaz. Reklam sinyalleri ve geliştirilmiş ölçüm kapalıdır. Form alanlarındaki ad, telefon ve mesaj okunmaz veya GA4 olaylarına eklenmez.
 
+## Kanal bağlantıları
+
+Google İşletme Profili için test edilmiş anonim edinim bağlantısı:
+
+`https://tgfmalimusavirlik.com/?utm_source=google_business_profile&utm_medium=organic&utm_campaign=local_profile`
+
+Bu bağlantı yalnız kaynak, medium ve kampanya kategorisi taşır; kişi ya da mesaj bilgisi içermez. Kod sözleşmesi ve otomatik test bu değerleri destekler. Google İşletme Profili'ndeki canlı site adresi ayrıca açık onay alınmadan değiştirilmez.
+
 ## Mesleki tanıtım uyum kapısı
 
 TÜRMOB'un reklam yasağı ve haksız rekabet kuralları nedeniyle büyüme planındaki arama motoru, Google İşletme Profili, yönlendirme, içerik ve CTA önerileri otomatik olarak uygulanmaz. Özellikle ücretli reklam, iş sağlama amaçlı anahtar kelime/bağlantı kullanımı, karşılaştırmalı veya üstünlük iddiası, indirim/ücretsiz hizmet vaadi, mükellef referansı ve toplu tanıtım mesajı için önce güncel oda/TÜRMOB uygunluğu doğrulanır ve ardından Gökay onayı alınır.
 
 Ölçüm altyapısı yalnız anonim performans kaydı içindir; reklam yasağını dolanmak veya kişisel veri toplamak için kullanılamaz.
 
-Tanıtım metinlerindeki nötrleştirmeler `2f9b871`, PII'siz yerel ölçüm kuyruğu `59a38b4` ve anonim huni özeti `96dbcf3` commit'leriyle Gökay'ın açık onayından sonra yayımlanmıştır. GA4/GTM bağlantısı, hesap kurulumu ve harici mesajlaşma bu yayınların parçası değildir.
+Tanıtım metinlerindeki nötrleştirmeler `2f9b871`, PII'siz yerel ölçüm kuyruğu `59a38b4`, anonim huni özeti `96dbcf3` ve onay kapılı GA4 bağlantısı `fb2a4c3` commit'leriyle Gökay'ın açık onayından sonra yayımlanmıştır. Harici mesajlaşma bu yayınların parçası değildir.
 
 Metin ve ölçüm değişikliklerinin iki ayrı sürüm halinde ilerlemesi için `release-checklist.md` kullanılır.
 

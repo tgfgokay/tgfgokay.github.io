@@ -21,7 +21,7 @@ Yayın sonrası doğrulama:
 
 ## Paket B — PII'siz ölçüm
 
-Durum: **DOĞRULANDI — TGF'ye özgü yerel olay kuyruğu yayımlandı.** İlk paket commit'i `59a38b4`; GitHub Pages koşusu `34110197558` başarıyla tamamlandı. GA4 temel onay bağlantısının yayın adayı ayrıca hazırlanmıştır.
+Durum: **DOĞRULANDI — TGF'ye özgü yerel olay kuyruğu ve onay kapılı GA4 bağlantısı yayımlandı.** İlk paket commit'i `59a38b4`; GA4 bağlantısı commit'i `fb2a4c3`. Derleme testleri, Google etiketinin analitik onayından önce yüklenmediğini doğruluyor. GA4 olay alımı henüz veri olmadığı için **BİLİNMİYOR**.
 
 Önkoşullar:
 
@@ -31,12 +31,16 @@ Durum: **DOĞRULANDI — TGF'ye özgü yerel olay kuyruğu yayımlandı.** İlk 
 - [x] Paket A canlıda doğrulanmış.
 - [x] Ölçüm paketi ayrı bir commit/sürüm olarak hazırlanmış.
 
-Canlı doğrulama:
+Kod ve derleme doğrulaması:
 
-- [ ] `contact_intent` telefon, e-posta ve WhatsApp için tek olay üretiyor.
-- [ ] `lead_form_submit` yalnız kontrollü hizmet kategorisi taşıyor.
-- [ ] İlk-touch kaynak, medium, kampanya, referrer domain ve açılış grubu beklenen değerlerde.
-- [ ] Ad, telefon, e-posta adresi, mesaj gövdesi veya serbest metin olay parametrelerinde yok.
+- [x] Telefon, e-posta ve WhatsApp bağlantıları kontrollü `contact_channel` kategorilerine eşleniyor.
+- [x] Form konu seçimi ve sayfa yolu yalnız kontrollü hizmet kategorilerine eşleniyor.
+- [x] İlk-touch kaynak, medium, kampanya, referrer domain ve açılış grubu beklenen değerlerde; Google İşletme Profili etiketi ayrıca test ediliyor.
+- [x] Ad, telefon, e-posta adresi, mesaj gövdesi veya serbest metin olay parametrelerinde yok.
+
+GA4 canlı veri doğrulaması:
+
+- [ ] `contact_intent` ve `lead_form_submit` olayları izinli gerçek oturumdan sonra GA4'te görülüyor.
 - [ ] Debug test trafiği gerçek lead raporundan ayrılmış.
 
 ## İlk 14 gün gözlem
@@ -48,4 +52,4 @@ Canlı doğrulama:
 
 ## Kapsam dışı
 
-Google İşletme Profili şimdilik beklemededir. Ücretli reklam, toplu mesaj, referans/mükellef adı ve gokaygul.com çapraz kampanyası bu yayın paketlerinin parçası değildir.
+Google İşletme Profili tek Şişli kaydına indirildi; adres, çalışma saatleri, nötr açıklama ve TGF site adresi güncellendi. İşletme videosuyla doğrulama Gökay tarafından tamamlanmayı bekliyor. Ücretli reklam, toplu mesaj, referans/mükellef adı ve gokaygul.com çapraz kampanyası bu yayın paketlerinin parçası değildir.

@@ -37,6 +37,22 @@ assert.deepEqual(
 
 assert.deepEqual(
   buildAcquisition({
+    queryString: '?utm_source=google_business_profile&utm_medium=organic&utm_campaign=local_profile',
+    referrer: 'https://www.google.com/',
+    landingPath: '/',
+  }),
+  {
+    source: 'google_business_profile',
+    medium: 'organic',
+    campaign: 'local_profile',
+    referrer_domain: 'google.com',
+    landing_path: '/',
+    landing_group: 'home',
+  },
+);
+
+assert.deepEqual(
+  buildAcquisition({
     queryString: '?utm_source=ad.soyad%40example.com&utm_medium=905551112233&utm_campaign=Kurulus',
     referrer: '',
     landingPath: '/en/services/company-formation/?ignored=yes',
