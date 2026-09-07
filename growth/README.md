@@ -10,6 +10,7 @@ Bu klasör TGF'nin gokaygul.com'dan bağımsız ticari çekiş kaydını tutar. 
 - Yeni satır eklendikten sonra `npm run growth:audit` çalıştırılır.
 - Aynı denetim, tanıtım sayfalarında ücretsiz hizmet, sonuç garantisi ve karşılaştırmalı üstünlük çağrışımı yapan belirlenmiş ifadeleri de tarar.
 - Yayına aday bir sürüm için `npm run growth:verify` çalıştırılır; bu komut derlenmiş HTML sayfalarının ölçüm paketini yüklediğini ve pakette harici analytics gönderimi bulunmadığını da doğrular.
+- Güncel anonim huni sayımları `npm run growth:report` ile alınır. Çıktı kişi veya lead kimliği göstermez; hacim ve zaman serisi oluşmadan trend/oran yorumu üretmez.
 
 ## Ölçüm sözleşmesi
 

@@ -10,6 +10,7 @@
     "prebuild": "node scripts/generate-covers.mjs",
     "build": "astro build",
     "growth:audit": "node growth/audit.mjs",
+    "growth:report": "node growth/funnel-summary.mjs",
     "growth:verify": "npm run growth:audit && npm run build && node growth/test-built-measurement.mjs && node scripts/seo-audit.mjs",
     "preview": "astro preview",
     "astro": "astro"
