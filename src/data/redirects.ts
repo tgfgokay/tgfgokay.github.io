@@ -11,9 +11,8 @@ export type Lang = 'tr' | 'en';
 const map: Record<string, string> = {
   // ── TR ───────────────────────────────────────────────────────────────
   '/': '/tr/mali-musavir/',
-  // gokaygul.com/tr/hakkimda/ kendisi noindex bir yönlendirme (→ /tr/#founder);
-  // zincir oluşmasın diye doğrudan asıl sayfaya gidiyoruz.
-  '/hakkimizda/': '/tr/',
+  // gokaygul.com/tr/hakkimda/ 12 Kas 2026'dan beri bağımsız yazar sayfası (200, indekslenebilir).
+  '/hakkimizda/': '/tr/hakkimda/',
   '/iletisim/': '/tr/iletisim/',
   '/cerez-ve-gizlilik/': '/tr/gizlilik/',
 
@@ -42,7 +41,7 @@ const map: Record<string, string> = {
 
   // ── EN (hedefler gokaygul.com sitemap'indeki hreflang eşlerinden) ────
   '/en/': '/en/',
-  '/en/about/': '/en/',
+  '/en/about/': '/en/hakkimda/',
   '/en/contact/': '/en/iletisim/',
   '/en/cookie-and-privacy/': '/en/gizlilik/',
 
