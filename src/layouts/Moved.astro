@@ -1,0 +1,28 @@
+---
+// "Taşındı" sayfası — site tümüyle gokaygul.com'a yönlendirildi.
+// Bilinçli olarak YOK: noindex, JSON-LD, analitik, form, çerez bandı.
+// google-site-verification korunur: Search Console mülk sahipliği sürsün.
+interface Props {
+  to: string;
+  lang?: 'tr' | 'en';
+}
+const { to, lang = 'tr' } = Astro.props;
+const title = lang === 'en' ? 'Moved — gokaygul.com' : 'Taşındı — gokaygul.com';
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="canonical" href={to} />
+    <meta http-equiv="refresh" content={`0; url=${to}`} />
+    <meta name="google-site-verification" content="X4rcrG7ju8IccCTx2QQ8J35tHDmil0Pcre6gShTW6Kg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    {lang === 'en'
+      ? <p>This page has moved to <a href={to}>gokaygul.com</a>.</p>
+      : <p>Bu sayfa <a href={to}>gokaygul.com</a> adresine taşındı.</p>}
+  </body>
+</html>
